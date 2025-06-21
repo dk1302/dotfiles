@@ -118,9 +118,5 @@ fi
 
 fastfetch -l ~/.ascii
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=/home/unknownd/.local/bin:/home/unknownd/.nvm/versions/node/v24.0.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
 eval "$(zoxide init bash)"
+source /home/unknownd/alacritty/extra/completions/alacritty.bash

@@ -1,0 +1,27 @@
+[window]
+opacity = 1 
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "GohuFont 14 Nerd Font"
+style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[colors.primary]
+background = '#16181a'
+foreground = '#08bdba'
+
+# Normal colors
+[colors.normal]
+black   = '#16181a'
+red     = '#f07178'
+green   = '#ff7eb6'
+yellow  = '#c3e88d'
+blue    = '#82cfff'
+magenta = '#c792ea'
+cyan    = '#60adec'
+white   = '#08bdba'
