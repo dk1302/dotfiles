@@ -119,4 +119,5 @@ fi
 fastfetch -l ~/.ascii
 
 eval "$(zoxide init bash)"
-source /home/unknownd/alacritty/extra/completions/alacritty.bash
+source ~/.bash_completion/alacritty/alacritty.bash
+. "$HOME/.cargo/env"

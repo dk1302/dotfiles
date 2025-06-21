@@ -1,6 +1,14 @@
 [window]
 opacity = 1 
 
+[window.position]
+x = 1320
+y = 25
+
+[window.dimensions]
+columns = 135
+lines = 74 
+
 [font]
 size = 12.0
 
