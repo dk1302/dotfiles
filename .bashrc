@@ -91,6 +91,12 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/tanjiro.jpg''
+alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/lucy-purple.jpg''
+alias m='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/cat.jpg''
+alias ,='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/train.jpg''
+
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,6 +124,6 @@ fi
 
 fastfetch -l ~/.ascii
 
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
 source ~/.bash_completion/alacritty/alacritty.bash
 . "$HOME/.cargo/env"

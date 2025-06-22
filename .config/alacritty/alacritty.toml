@@ -2,12 +2,19 @@
 opacity = 1 
 
 [window.position]
-x = 1320
-y = 25
+x = 55 
+y = 40
 
 [window.dimensions]
-columns = 135
-lines = 74 
+columns = 274 
+lines = 73
+
+[cursor]
+blink_interval = 500
+blink_timeout = 0
+
+[cursor.style]
+blinking = "Always"
 
 [font]
 size = 12.0
