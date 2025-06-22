@@ -93,8 +93,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/tanjiro.jpg''
 alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/lucy-purple.jpg''
-alias m='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/cat.jpg''
-alias ,='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/train.jpg''
+alias m='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/baby-goku.jpg''
+alias ,='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/goku.jpg''
 
 
 
