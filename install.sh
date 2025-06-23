@@ -1,5 +1,6 @@
 !#/bin/bash
 cd ~
+rustup update
 sudo apt install xclip cmake libevent ncurses libevent-dev ncurses-dev build-essential bison pkg-config ffmpeg 7zip jq poppler-utils ripgrep libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev stow autoconf automake imagemagick tmux
 #fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
