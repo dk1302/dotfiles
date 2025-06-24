@@ -51,10 +51,10 @@ echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
 cd ~
 rm -rf alacritty
 #ppa's
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo add-apt-repository ppa:openrazer/stable
-sudo add-apt-repository ppa:polychromatic/stable
+sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo add-apt-repository -y ppa:openrazer/stable
+sudo add-apt-repository -y ppa:polychromatic/stable
 sudo apt-get -y update
 sudo apt-get -y install fastfetch neovim polychromatic
 cd dotfiles
