@@ -8,3 +8,5 @@ sudo add-apt-repository -y ppa:openrazer/stable
 sudo add-apt-repository -y ppa:polychromatic/stable
 sudo apt update -y
 sudo apt install -y fastfetch neovim polychromatic
+echo "fastfetch -l ~/.ascii" >> ~/.bashrc
+echo "eval "$(zoxide init --cmd cd bash)"" >> ~/.bashrc
