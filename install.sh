@@ -1,6 +1,7 @@
 sudo apt install -y cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 \
                     ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide tmux xclip 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 #ppa's
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
