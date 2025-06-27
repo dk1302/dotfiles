@@ -92,7 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/tanjiro.jpg''
-alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/lucy-purple.jpg''
+alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/chill.jpg''
 alias m='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/baby-goku.jpg''
 alias ,='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/goku.jpg''
 
@@ -127,3 +127,7 @@ fastfetch -l ~/.ascii
 eval "$(zoxide init --cmd cd bash)"
 source ~/.bash_completion/alacritty/alacritty.bash
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
