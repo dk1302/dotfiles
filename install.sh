@@ -1,4 +1,3 @@
-!#/bin/bash
 sudo apt install -y ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide tmux xclip 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 #ppa's
