@@ -1,5 +1,4 @@
 #alacritty
-rustup update
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 rustup override set stable
