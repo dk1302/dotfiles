@@ -10,3 +10,4 @@ sudo apt update -y
 sudo apt install -y fastfetch neovim polychromatic
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
 echo "eval "$(zoxide init --cmd cd bash)"" >> ~/.bashrc
+#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
