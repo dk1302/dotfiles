@@ -11,4 +11,5 @@ sudo apt update -y
 sudo apt install -y fastfetch neovim polychromatic
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
 echo "eval "$(zoxide init --cmd cd bash)"" >> ~/.bashrc
-#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
+echo "alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/day.jpg''" >> ~/.bashrc
+echo "alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/night.jpg''" >> ~/.bashrc
