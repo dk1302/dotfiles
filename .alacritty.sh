@@ -10,6 +10,5 @@ sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 mkdir -p ~/.bash_completion
 cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
-echo "source ~/.bash_completion/alacritty/alacritty.bash" >> ~/.bashrc
-cd ~
-rm -rf alacritty
+echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
+cd ..
