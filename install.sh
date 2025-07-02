@@ -28,10 +28,3 @@ echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin' >> ~/.
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
 echo 'eval "$(zoxide init --cmd c bash)"' >> ~/.bashrc
 echo 'eval "$(fzf --bash)"' >> ~/.bashrc
-echo 'function r() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}' >> ~/.bashrc
