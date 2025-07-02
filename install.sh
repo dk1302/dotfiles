@@ -21,9 +21,17 @@ sudo apt install -y fastfetch neovim polychromatic
 # Path Setup
 echo "alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/day.jpg''" >> ~/.bashrc
 echo "alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/night.jpg''" >> ~/.bashrc
-echo "export DOTNET_ROOT=$HOME/.dotnet" >> ~/.bashrc
-echo "export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools" >> ~/.bashrc
-echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+echo "alias t='tmux'" >> ~/.bashrc
+echo "alias n='nvim'" >> ~/.bashrc
+echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
+echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin' >> ~/.bashrc
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
-echo "eval "$(zoxide init --cmd cd bash)"" >> ~/.bashrc
-echo "eval "$(fzf --bash)"" >> ~/.bashrc
+echo 'eval "$(zoxide init --cmd c bash)"' >> ~/.bashrc
+echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+echo 'function r() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}' >> ~/.bashrc
