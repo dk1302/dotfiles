@@ -2,7 +2,6 @@ git config --global user.email "deank293@gmail.com"
 git config --global user.name "dk1302"
 # Install binaries
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install

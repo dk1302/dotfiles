@@ -1,2 +1,2 @@
-pacman -S cmake build-essential pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 \
-                    ffmpeg 7zip jq poppler-utils fd-find ripgrep tmux xclip
+sudo pacman -S base-devel freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
+                    ffmpeg 7zip jq poppler fd ripgrep tmux xclip
