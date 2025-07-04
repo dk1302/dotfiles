@@ -1,5 +1,3 @@
-sudo apt-get install -y cmake build-essential pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 \
-                    ffmpeg 7zip jq poppler-utils fd-find ripgrep tmux xclip
 git config --global user.email "deank293@gmail.com"
 git config --global user.name "dk1302"
 # Install binaries
@@ -11,16 +9,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 9.0
-# ppa's
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo add-apt-repository ppa:openrazer/stable -y
-sudo add-apt-repository ppa:polychromatic/stable -y
-sudo apt update -y
-sudo apt install -y fastfetch neovim polychromatic
 # Path Setup
-echo "alias j='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/day.jpg''" >> ~/.bashrc
-echo "alias k='gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/unknownd/Pictures/night.jpg''" >> ~/.bashrc
 echo "alias t='tmux'" >> ~/.bashrc
 echo "alias n='nvim'" >> ~/.bashrc
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
