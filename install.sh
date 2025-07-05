@@ -10,9 +10,15 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 9.0
 # Path Setup
 echo "alias t='tmux'" >> ~/.bashrc
-echo "alias n='nvim'" >> ~/.bashrc
+echo "alias e='nvim'" >> ~/.bashrc
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin' >> ~/.bashrc
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
 echo 'eval "$(zoxide init --cmd c bash)"' >> ~/.bashrc
 echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+echo 'if uwsm check may-start && uwsm select; then
+	exec uwsm start default
+fi
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux 
+fi' >> ~/.bashrc
