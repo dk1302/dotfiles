@@ -31,3 +31,5 @@ cd wl-gammarelay
 make
 sudo make install
 cd ..
+yay -S hyprland-git
+sudo pacman -S hyprpaper hyprpicker hypridle

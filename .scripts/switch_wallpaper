@@ -1,0 +1,8 @@
+#!/bin/bash
+hyprctl hyprpaper reload HDMI-A-1,"$1" 
+cd ~/.cache/wallpaper 
+cp $1 .
+mv $2 previous.jpg 
+wal -s -i $1 
+swaync-client -R 
+swaync-client -rs

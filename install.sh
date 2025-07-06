@@ -1,3 +1,7 @@
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
 git config --global user.email "deank293@gmail.com"
 git config --global user.name "dk1302"
 # Install binaries
@@ -12,7 +16,7 @@ chmod +x ./dotnet-install.sh
 echo "alias t='tmux'" >> ~/.bashrc
 echo "alias e='nvim'" >> ~/.bashrc
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
-echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin:$HOME/.scripts' >> ~/.bashrc
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
 echo 'eval "$(zoxide init --cmd c bash)"' >> ~/.bashrc
 echo 'eval "$(fzf --bash)"' >> ~/.bashrc
