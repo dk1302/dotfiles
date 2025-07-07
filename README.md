@@ -23,6 +23,5 @@ systemctl reboot
 ./post.sh
 systemctl reboot
 ```
-## Warnings
-# Bugs
+## Bugs
 Minor bug where waybar duplicates after resuming from suspend. Reset wallpaper with `wallmenu` to fix.
