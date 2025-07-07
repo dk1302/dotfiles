@@ -1,5 +1,5 @@
 return {
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	config = function()
 		local null_ls = require("null-ls")
 
@@ -8,6 +8,13 @@ return {
 		local async = event == "BufWritePost"
 
 		null_ls.setup({
+			debug = true,
+			sources = {
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.clang_format.with({
+					extra_args = { "--style=file" },
+				}),
+			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
 					vim.keymap.set("n", "<Leader>f", function()
@@ -33,5 +40,6 @@ return {
 				end
 			end,
 		})
+		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
 	end,
 }

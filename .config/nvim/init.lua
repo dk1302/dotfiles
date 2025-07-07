@@ -177,6 +177,16 @@ require("lazy").setup({
 	-- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
 	--
 
+	require("custom.plugins.yazi"),
+
+	require("custom.plugins.fuzzy"),
+
+	require("custom.plugins.lsp"),
+
+	require("custom.plugins.theme"),
+
+	require("custom.plugins.format"),
+
 	-- Alternatively, use `config = function() ... end` for full control over the configuration.
 	-- If you prefer to call `setup` explicitly, use:
 	--    {
@@ -205,7 +215,6 @@ require("lazy").setup({
 		},
 	},
 
-	require("custom.plugins.yazi"),
 	--
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
@@ -280,7 +289,6 @@ require("lazy").setup({
 	-- you do for a plugin at the top level, you can do for a dependency.
 	--
 	-- Use the `dependencies` key to specify the dependencies of a particular plugin
-	require("custom.plugins.fuzzy"),
 	--
 	-- LSP Plugins
 	{
@@ -296,7 +304,6 @@ require("lazy").setup({
 		},
 	},
 	--
-	require("custom.plugins.lsp"),
 	--
 	{ -- Autoformat
 		"stevearc/conform.nvim",
@@ -438,7 +445,6 @@ require("lazy").setup({
 		},
 	},
 	--
-	require("custom.plugins.theme"),
 	--
 	-- Highlight todo, notes, etc in comments
 	{

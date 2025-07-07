@@ -32,4 +32,4 @@ make
 sudo make install
 cd ..
 yay -S hyprland-git
-sudo pacman -S hyprpaper hyprpicker hypridle
+sudo pacman -S hyprpaper hyprpicker hypridle hyprshot
