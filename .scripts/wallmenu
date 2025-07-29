@@ -5,6 +5,5 @@ chosen=$(echo -e "$wallpapers" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wa
 if [ "$chosen" = "" ]; then
   exit
 else 
-  echo "$chosen"
   switch_wallpaper ~/.wallpapers/$chosen $chosen
 fi

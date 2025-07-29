@@ -1,0 +1,3 @@
+#!/bin/bash
+tmp=$(bluetoothctl show | grep PowerState)
+[[ "$tmp" == *"on"* ]] && echo true || echo false

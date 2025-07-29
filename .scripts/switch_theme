@@ -1,0 +1,10 @@
+#!/bin/bash
+tmp=$(hyprpicker)
+if [ tmp != "" ]; then
+    echo "@define-color background #16181a;
+    @define-color foreground #d3d3d3;
+    @define-color border $tmp;" >> tmp.txt
+    mv tmp.txt ~/.themes/waybar.css
+    swaync-client -R 
+    swaync-client -rs
+fi

@@ -1,8 +1,8 @@
-@import url('../../.cache/wal/colors-waybar.css');
+@import url('../../.themes/waybar.css');
 
 * {
   font-family: "DepartureMono Nerd Font Propo", monospace;
-  border-radius: 0;
+  border-radius: 15px;
 }
 
 .control-center .notification-row:focus,
@@ -37,26 +37,25 @@
 .widget-mpris>box>button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 0;
+  border-radius: 15px;
 }
 
 .notification {
   background: @background;
-  border: 2px solid @color9;
+  border: 2px solid @border;
   opacity: 0.9;
   margin: 3px -2px 3px 0;
 }
 
 .close-button {
   background: @background;
-  color: @color9;
+  color: @border;
   text-shadow: none;
   padding: 0;
   margin-top: 5px;
   margin-right: 5px;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
-  border-radius: 0;
   border: none;
 }
 
@@ -65,35 +64,35 @@
 }
 
 .close-button:hover {
-  background: @color9;
+  background: @border;
   box-shadow: none;
   transition: all 0.15s ease-in-out;
 }
 
 .notification-action {
-  border: 2px solid @color9;
+  border: 2px solid @border;
   border-top: none;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-  color: @color9;
+  color: @border;
   background: @background;
 }
 
 .inline-reply-entry {
   background: @background;
-  color: @color9;
+  color: @border;
   caret-color: @foreground;
-  border: 1px solid @color9;
+  border: 1px solid @border;
 }
 
 .inline-reply-button {
   margin-top: 4px;
   margin-left: 4px;
   background: @background;
-  border: 1px solid @color9;
-  color: @color9;
+  border: 1px solid @border;
+  color: @border;
 }
 
 .inline-reply-button:disabled {
@@ -110,7 +109,7 @@
   font-size: 16px;
   font-weight: 700;
   background: transparent;
-  color: @color9;
+  color: @border;
   text-shadow: none;
 }
 
@@ -134,11 +133,11 @@
 .control-center {
   background: @background;
   opacity: 0.85;
-  border: 2px solid @color9;
+  border: 2px solid @border;
 }
 
 .widget-title {
-  color: @color9;
+  color: @border;
   background: @background;
   padding: 5px 10px;
   margin: 10px;
@@ -153,7 +152,7 @@
 }
 
 .widget-title>button:hover {
-  background: @color9;
+  background: @border;
   color: @Background;
 }
 
@@ -162,17 +161,17 @@
   padding: 5px 10px;
   margin: 5px 10px;
   font-size: large;
-  color: @color9;
+  color: @border;
 }
 
 .widget-dnd>switch {
-  background: @color9;
+  background: @border;
   border-radius: 0;
 }
 
 .widget-dnd>switch:checked {
-  background: @color9;
-  border: 1px solid @color9;
+  background: @border;
+  border: 1px solid @border;
 }
 
 .widget-label>label {
@@ -182,7 +181,7 @@
 }
 
 .widget-buttons-grid {
-  font-size: x-large;
+  font-size: large;
   padding: 5px;
   margin: 10px;
   background: @background;
@@ -192,18 +191,18 @@
   margin: 3px;
   background: @background;
   color: @foreground;
-  border: 2px solid @color9;
+  border: 2px solid @border;
   transition: background-color 0.15s ease-in-out;
   box-shadow: none;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @color9;
+  background: @border;
   color: @background;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
-  background: @color9;
+  background: @border;
   color: @background;
 }
 
@@ -213,7 +212,7 @@
   padding: 5px;
   margin: 5px 10px;
   font-size: 2rem;
-  color: @color9;
+  color: @border;
 }
 
 .widget-mpris {
@@ -227,7 +226,7 @@
 .widget-mpris>box>button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 0;
+  border-radius: 15px;
   box-shadow: none;
   padding: 5px 10px;
   margin: 10px 0 0 0;
