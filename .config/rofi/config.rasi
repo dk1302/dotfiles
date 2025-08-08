@@ -1,6 +1,10 @@
 configuration {
   font: "DepartureMono Nerd Font Medium 10";
 
+  hover-select: true;
+  me-select-entry: "";
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+
   drun {
     display-name: "[^.^]";
   }

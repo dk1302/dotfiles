@@ -1,5 +1,8 @@
 #!/bin/bash
-hyprctl hyprpaper reload HDMI-A-1,"$1" 
+hyprctl hyprpaper reload HDMI-A-1,"~/.wallpapers/$1" 
 cd ~/.cache/wallpaper 
-cp $1 .
-mv $2 previous.jpg 
+rm -r * 
+cp ~/.wallpapers/$1 .
+echo "unload
+preload = ~/.cache/wallpaper/$1
+wallpaper = HDMI-A-1, ~/.cache/wallpaper/$1" > ~/.config/hypr/hyprpaper.conf

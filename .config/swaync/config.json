@@ -76,11 +76,11 @@
           "type": "toggle"
         },
         {
-          "label": "󰖩",
-          "command": "nm-connection-editor"
+          "label": "󰍜",
+          "command": "rofi -show drun -theme ~/.config/rofi/config.rasi"
         },
         {
-          "label": "󰂯",
+          "label": "󰂲",
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power off || bluetoothctl power on'",
           "update-command": "sh -c '[[ $(bluetoothcheck) == true ]] && echo false || echo true'",
