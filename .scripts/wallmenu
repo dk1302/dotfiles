@@ -1,5 +1,5 @@
 #!/bin/bash
-wallpapers=$(cd ~/.wallpapers && ls)
+wallpapers=$(cd ~/wallpapers && ls)
 chosen=$(echo -e "$wallpapers" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wallpaper: " -theme ~/.config/rofi/config.rasi)
 
 if [ "$chosen" = "" ]; then
