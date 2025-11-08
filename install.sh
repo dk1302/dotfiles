@@ -13,8 +13,6 @@ curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 9.0
 # Path Setup
-echo "alias t='tmux'" >> ~/.bashrc
-echo "alias e='nvim'" >> ~/.bashrc
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin:$HOME/.scripts' >> ~/.bashrc
 echo "fastfetch -l ~/.ascii" >> ~/.bashrc
