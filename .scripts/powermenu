@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+chosen=$(printf " Suspend\n Restart\n Switch\n Log Out" | rofi -dmenu -i -theme ~/.config/rofi/config.rasi)
+
+case "$chosen" in
+	"  Suspend") systemctl suspend ;;
+	" Restart") systemctl reboot ;;
+	" Switch") systemctl reboot --firmware ;;
+	"  Log Out") hyprctl dispatch exit ;;
+	*) exit 1 ;;
+esac

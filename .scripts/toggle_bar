@@ -1,0 +1,7 @@
+#!/bin/bash
+ps cax | grep waybar > /dev/null
+if [ $? -eq 0 ]; then
+  pkill waybar && swaync-client -R
+else
+  hyprctl dispatch exec waybar && swaync-client -rs
+fi
