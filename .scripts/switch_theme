@@ -1,5 +1,5 @@
-#!/bin/bash
-tmp=$(wl-color-picker)
+#!/usr/bin/env bash
+tmp=$(hyprpicker)
 if [ -n "$tmp" ]; then
     echo "@define-color background #16181a;
 @define-color foreground #d3d3d3;

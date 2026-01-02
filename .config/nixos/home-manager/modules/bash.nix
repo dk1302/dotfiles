@@ -4,9 +4,9 @@
   enable = true;
   shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake .#unknownd";
-    conf = "sudo nvim /etc/nixos/configuration.nix";
-    home = "sudo nvim /etc/nixos/home.nix";
+    nfs = "sudo nixos-rebuild switch";
     sh = "nix-shell";
+    f = "fastfetch -l ~/.ascii";
   };
   initExtra = ''export PATH=$PATH:$HOME/.local/bin:$HOME/.scripts
 eval "$(zoxide init --cmd cd bash)"
