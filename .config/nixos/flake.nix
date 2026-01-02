@@ -10,17 +10,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration.nix
+        ./system/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
             backupFileExtension = "backup";
-            users.unknownd = import ./home.nix;
+            users.unknownd = import ./home-manager/home.nix;
           };
         }
       ];

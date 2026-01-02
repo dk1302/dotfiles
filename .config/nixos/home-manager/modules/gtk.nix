@@ -14,11 +14,6 @@
       package = pkgs.palenight-theme;
     };
 
-    cursorTheme = {
-      name = "Bibata Modern Classic";
-      package = pkgs.numix-cursor-theme;
-    };
-
     font = {name = "RecMono Nerd Font Mono"; package = pkgs.nerd-fonts.recursive-mono;};
   };
 }
