@@ -13,8 +13,8 @@
     swaynotificationcenter
     waybar
     waypaper
-    swayidle
-    wl-color-picker
+    hypridle
+    hyprpicker
     gtk3
     gtk4
     yazi

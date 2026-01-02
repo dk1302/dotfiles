@@ -3,7 +3,7 @@
   programs.bash = {
   enable = true;
   shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake .";
+    nrs = "sudo nixos-rebuild switch --flake .#unknownd";
     conf = "sudo nvim /etc/nixos/configuration.nix";
     home = "sudo nvim /etc/nixos/home.nix";
     sh = "nix-shell";

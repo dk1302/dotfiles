@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
       modules = [
         ./system/configuration.nix
