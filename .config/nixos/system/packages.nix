@@ -1,0 +1,40 @@
+{ config, lib, pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    swww
+    blender
+    wireshark
+    stow
+    rofi
+    nemo
+    fastfetch
+    unzip
+    swaynotificationcenter
+    waybar
+    waypaper
+    swayidle
+    wl-color-picker
+    gtk3
+    gtk4
+    yazi
+    tmux
+    wl-clipboard
+    python315
+    poppler
+    fd
+    ripgrep
+    fzf
+    zoxide
+    alacritty
+    wl-gammarelay-rs
+    wl-gammarelay-applet
+    git
+    ytmdesktop
+    uwsm
+    networkmanagerapplet
+    blueman
+    dconf-editor
+    ueberzugpp
+  ];
+}

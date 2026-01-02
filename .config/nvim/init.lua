@@ -35,6 +35,10 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
 
+-- local lspconfig = require("lspconfig")
+-- local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- lspconfig.rust-analyzer.setup({ capabilities = lsp_capabilities })
+
 -- Enable break indent
 vim.opt.breakindent = true
 

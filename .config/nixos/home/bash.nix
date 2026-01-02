@@ -1,0 +1,29 @@
+{ pkgs, ... }:
+{
+  programs.bash = {
+  enable = true;
+  shellAliases = {
+    nrs = "sudo nixos-rebuild switch --flake .";
+    conf = "sudo nvim /etc/nixos/configuration.nix";
+    home = "sudo nvim /etc/nixos/home.nix";
+    sh = "nix-shell";
+  };
+  initExtra = ''export PATH=$PATH:$HOME/.local/bin:$HOME/.scripts
+eval "$(zoxide init --cmd cd bash)"
+eval "$(fzf --bash)"
+fastfetch -l ~/.ascii
+if uwsm check may-start && uwsm select; then
+	exec uwsm start default
+fi
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux 
+fi
+function r() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d "" cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}'';
+  };
+}

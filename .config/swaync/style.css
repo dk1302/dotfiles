@@ -1,7 +1,7 @@
 @import url('../../.themes/waybar.css');
 
 * {
-  font-size: 17px;
+  font-size: 20px;
   font-family: "RecMono Linear Nerd Font Propo";
   border-radius: 15px;
 }

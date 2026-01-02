@@ -78,13 +78,6 @@
         {
           "label": "󰍜",
           "command": "rofi -show run -theme ~/.config/rofi/config.rasi"
-        },
-        {
-          "label": "󰂲",
-          "active": false,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power off || bluetoothctl power on'",
-          "update-command": "sh -c '[[ $(bluetoothcheck) == true ]] && echo false || echo true'",
-          "type": "toggle"
         }
       ]
     }
