@@ -1,0 +1,16 @@
+return {
+	"nvim-mini/mini.surround",
+	opts = {
+		mappings = {
+			add = "na", -- Add surrounding in Normal and Visual modes
+			delete = "nd", -- Delete surrounding
+			find = "nf", -- Find surrounding (to the right)
+			find_left = "nF", -- Find surrounding (to the left)
+			highlight = "nh", -- Highlight surrounding
+			replace = "nr", -- Replace surrounding
+
+			suffix_last = "", -- Suffix to search with "prev" method
+			suffix_next = "", -- Suffix to search with "next" method
+		},
+	},
+}

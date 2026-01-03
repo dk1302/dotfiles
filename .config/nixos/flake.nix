@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nvf.url = "github:notashelf/nvf";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,7 +11,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, nvf, home-manager, ... }: {
+    packages.x86_64-linux.nvf =
+      (nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./nvf.nix
+        ];
+      })
+      .neovim;
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
       modules = [
         ./system/configuration.nix

@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nodejs_24
     swww
     blender
     wireshark
@@ -20,7 +21,6 @@
     yazi
     tmux
     wl-clipboard
-    python315
     poppler
     fd
     ripgrep
@@ -36,5 +36,6 @@
     blueman
     dconf-editor
     ueberzugpp
+    xhost
   ];
 }
