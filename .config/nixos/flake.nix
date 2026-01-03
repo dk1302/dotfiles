@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,16 +11,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, ... }: {
-    packages.x86_64-linux.nvf =
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ./nvf.nix
-        ];
-      })
-      .neovim;
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
       modules = [
         ./system/configuration.nix
         home-manager.nixosModules.home-manager

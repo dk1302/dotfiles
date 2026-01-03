@@ -2,7 +2,6 @@
   imports = [
     ./modules/bash.nix
     ./modules/gtk.nix
-    ./modules/nvim.nix
     ./modules/yazi.nix
   ];
 
