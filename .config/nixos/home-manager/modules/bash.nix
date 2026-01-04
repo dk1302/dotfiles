@@ -4,14 +4,14 @@
   enable = true;
   shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake .#unknownd";
-    nfs = "sudo nixos-rebuild switch";
+    del = "nix-collect-garbage -d";
     sh = "nix-shell";
-    f = "fastfetch -l ~/.ascii";
+    f = "fastfetch -l ~/.nix_flake";
   };
   initExtra = ''export PATH=$PATH:$HOME/.local/bin:$HOME/.scripts
 eval "$(zoxide init --cmd cd bash)"
 eval "$(fzf --bash)"
-fastfetch -l ~/.ascii
+fastfetch -l ~/.nix_flake
 if uwsm check may-start && uwsm select; then
 	exec uwsm start default
 fi

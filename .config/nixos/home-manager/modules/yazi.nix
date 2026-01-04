@@ -49,6 +49,7 @@
 	{ on = "R"; run = "plugin fzf"; }
 	{ on = "r"; run = "plugin zoxide"; }
 	{ on = "e"; run = "shell --block --interactive"; }
+  { on = ["g" "i"]; run  = "plugin lazygit"; desc = "run lazygit"; }
       ];
     };
   };

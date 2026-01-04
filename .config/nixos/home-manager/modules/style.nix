@@ -4,16 +4,22 @@
 
   gtk = {
     enable = true;
+    gtk2.enable = false;
+    gtk4.enable = false;
     iconTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
 
     theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
+      name = "amarena";
+      package = pkgs.amarena-theme;
     };
 
     font = {name = "RecMono Nerd Font Mono"; package = pkgs.nerd-fonts.recursive-mono;};
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme=true;
+    };
   };
 }

@@ -31,12 +31,23 @@ require('blink.cmp').setup({
 
 
 
-
 -- Treesitter
 vim.pack.add({"https://github.com/nvim-treesitter/nvim-treesitter.git"})
 require('nvim-treesitter').install({
-  "rust"
-  -- "lua"
+  "rust",
+  "c",
+  "cpp",
+  "cmake",
+  "c_sharp",
+  "typescript",
+  "javascript",
+  "json",
+  "html",
+  "bash",
+  "python",
+  "toml",
+  "nix",
+  "lua",
 })
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -48,14 +59,17 @@ vim.api.nvim_create_autocmd('FileType', {
 
 
 
-
-
-
 -- Lsp setup
 vim.pack.add({"https://github.com/neovim/nvim-lspconfig.git"})
 local servers = { 
-  rust_analyzer = {}
-  -- lua_ls = {}
+  rust_analyzer = {},
+  clangd = {},
+  csharp_ls = {},
+  csharpier = {},
+  ts_ls = {},
+  lua_ls = {},
+  nixd = {},
+  pyright = {},
 }
 for server, config in pairs(servers) do
   config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
@@ -68,8 +82,11 @@ end
 
 
 -- Colorscheme
-
+vim.pack.add({"https://github.com/rktjmp/lush.nvim.git"})
+vim.pack.add({"https://github.com/zenbones-theme/zenbones.nvim.git"})
+vim.pack.add({"https://github.com/folke/tokyonight.nvim.git"})
 vim.pack.add({"https://github.com/scottmckendry/cyberdream.nvim.git"})
+vim.pack.add({"https://github.com/mistweaverco/vhs-era-theme.nvim.git"})
 require("cyberdream").setup({
   overrides = function(colors)
     return {
@@ -80,13 +97,15 @@ require("cyberdream").setup({
   end,
 
   colors = {
-    blue = "#ff7eb6",
+    blue = "#ffaed7",
     fg = "#08bdba",
     orange = "#33b1ff",
     purple = "#5eff6c",
   },
   -- Load the colorscheme here.
 })
+vim.o.termguicolors = true
+vim.o.background = "dark"
 vim.cmd[[colorscheme cyberdream]]
 
 

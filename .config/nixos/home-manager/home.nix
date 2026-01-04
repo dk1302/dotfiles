@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./modules/bash.nix
-    ./modules/gtk.nix
+    ./modules/style.nix
     ./modules/yazi.nix
   ];
 

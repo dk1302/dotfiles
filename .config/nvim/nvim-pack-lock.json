@@ -12,6 +12,10 @@
       "rev": "a956559cda735fbc9f0b39541529386322afaedd",
       "src": "https://github.com/scottmckendry/cyberdream.nvim.git"
     },
+    "everforest": {
+      "rev": "b90025cc84dbb9c46df5a2ae540d3f01cf85af74",
+      "src": "https://github.com/sainnhe/everforest.git"
+    },
     "fd": {
       "rev": "5f95a781212e3efbc6d91ae50e0ca0ce0693da50",
       "src": "https://github.com/sharkdp/fd.git"
@@ -27,6 +31,10 @@
     "lazydev.nvim": {
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
       "src": "https://github.com/folke/lazydev.nvim.git"
+    },
+    "lush.nvim": {
+      "rev": "9c60ec2279d62487d942ce095e49006af28eed6e",
+      "src": "https://github.com/rktjmp/lush.nvim.git"
     },
     "mini.nvim": {
       "rev": "5d8d141cb113e9d235c9215475b26b0d20612150",
@@ -60,6 +68,14 @@
       "rev": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
       "src": "https://github.com/nvim-telescope/telescope.nvim.git"
     },
+    "tokyonight.nvim": {
+      "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
+      "src": "https://github.com/folke/tokyonight.nvim.git"
+    },
+    "vhs-era-theme.nvim": {
+      "rev": "2cce5fd3a381adbc105836b352cfe57e6eb46e61",
+      "src": "https://github.com/mistweaverco/vhs-era-theme.nvim.git"
+    },
     "vim-tmux-navigator": {
       "rev": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a",
       "src": "https://github.com/christoomey/vim-tmux-navigator.git"
@@ -71,6 +87,10 @@
     "yazi.nvim": {
       "rev": "e0394785918dc391e9d2e863a15f3b5caf033747",
       "src": "https://github.com/mikavilpas/yazi.nvim.git"
+    },
+    "zenbones.nvim": {
+      "rev": "4635a3f46d1066975d1074cd9f61f93cb1e32f64",
+      "src": "https://github.com/zenbones-theme/zenbones.nvim.git"
     }
   }
 }

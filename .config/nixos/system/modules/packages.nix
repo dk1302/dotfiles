@@ -5,21 +5,23 @@
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
     nerd-fonts.gohufont
-    nerd-fonts.departure-mono
   ];
 
   programs.firefox.enable = true;
   
   programs.steam.enable = true;
 
-  # programs.neovim = {
-  #   enable = true;
-  #   package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-  # };
+  programs.nix-ld.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+  };
 
   environment.systemPackages = with pkgs; [
-    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
-    nodejs_24
+    gamescope
+    mangohud
+    lazygit
     swww
     blender
     wireshark
@@ -45,14 +47,11 @@
     zoxide
     alacritty
     wl-gammarelay-rs
-    wl-gammarelay-applet
     git
     ytmdesktop
     uwsm
     networkmanagerapplet
     blueman
-    dconf-editor
-    ueberzugpp
     xhost
   ];
 }

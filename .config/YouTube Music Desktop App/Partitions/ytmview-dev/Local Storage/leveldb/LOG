@@ -1,6 +1,6 @@
-2026/01/03-19:21:00.139 6b41 Reusing MANIFEST /home/unknownd/.config/YouTube Music Desktop App/Partitions/ytmview-dev/Local Storage/leveldb/MANIFEST-000001
-2026/01/03-19:21:00.139 6b41 Recovering log #3
-2026/01/03-19:21:00.139 6b41 Reusing old log /home/unknownd/.config/YouTube Music Desktop App/Partitions/ytmview-dev/Local Storage/leveldb/000003.log 
-2026/01/03-19:38:00.541 6b41 Level-0 table #5: started
-2026/01/03-19:38:00.549 6b41 Level-0 table #5: 14217 bytes OK
-2026/01/03-19:38:00.556 6b41 Delete type=0 #3
+2026/01/04-17:51:35.681 62cb Reusing MANIFEST /home/unknownd/.config/YouTube Music Desktop App/Partitions/ytmview-dev/Local Storage/leveldb/MANIFEST-000001
+2026/01/04-17:51:35.682 62cb Recovering log #4
+2026/01/04-17:51:35.682 62cb Reusing old log /home/unknownd/.config/YouTube Music Desktop App/Partitions/ytmview-dev/Local Storage/leveldb/000004.log 
+2026/01/04-17:55:36.016 62c7 Level-0 table #8: started
+2026/01/04-17:55:36.025 62c7 Level-0 table #8: 12671 bytes OK
+2026/01/04-17:55:36.030 62c7 Delete type=0 #4
