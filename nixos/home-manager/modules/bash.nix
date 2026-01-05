@@ -6,12 +6,12 @@
     nrs = "sudo nixos-rebuild switch --flake .#unknownd";
     del = "nix-collect-garbage -d";
     sh = "nix-shell";
-    f = "fastfetch -l ~/.nix_flake";
+    f = "fastfetch -l ~/.nix";
   };
-  initExtra = ''export PATH=$PATH:$HOME/.local/bin:$HOME/.scripts
+  initExtra = ''
 eval "$(zoxide init --cmd cd bash)"
 eval "$(fzf --bash)"
-fastfetch -l ~/.nix_flake
+fastfetch -l ~/.nix
 if uwsm check may-start && uwsm select; then
 	exec uwsm start default
 fi
@@ -26,4 +26,8 @@ function r() {
 	rm -f -- "$tmp"
 }'';
   };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.scripts"
+  ];
 }

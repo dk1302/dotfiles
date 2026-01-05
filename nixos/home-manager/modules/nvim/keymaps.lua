@@ -1,0 +1,21 @@
+vim.keymap.set("n", "<M-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<M-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<M-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<M-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+vim.keymap.set("n", "<M-]>", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<M-/>", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<M-->", "<cmd>q!<cr>", { desc = "Close pane" })
+vim.keymap.set("n", "<M-w>", "<cmd>w<cr>", { desc = "Save pane" })
+
+vim.keymap.set("n", "<M-u>", "<C-d>zt")
+vim.keymap.set("n", "<M-i>", "<C-u>zt")
+vim.keymap.set("n", "<M-y>", "zt")
+vim.keymap.set("n", "<M-o>", "zb")
+
+vim.pack.add({"https://github.com/christoomey/vim-tmux-navigator.git"})
+vim.keymap.set("n", "<m-h>", "<cmd>TmuxNavigateLeft<cr>")
+vim.keymap.set("n", "<m-j>", "<cmd>TmuxNavigateDown<cr>")
+vim.keymap.set("n", "<m-k>", "<cmd>TmuxNavigateUp<cr>")
+vim.keymap.set("n", "<m-l>", "<cmd>TmuxNavigateRight<cr>")
+vim.keymap.set("n", "<m-\\>", "<cmd>TmuxNavigatePrevious<cr>")

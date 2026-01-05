@@ -13,14 +13,13 @@
 
   programs.nix-ld.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+  # };
 
   environment.systemPackages = with pkgs; [
     gamescope
-    mangohud
     lazygit
     swww
     blender
@@ -36,7 +35,6 @@
     hypridle
     hyprpicker
     gtk3
-    gtk4
     yazi
     tmux
     wl-clipboard
