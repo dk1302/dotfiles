@@ -13,12 +13,8 @@
 
   programs.nix-ld.enable = true;
 
-  # programs.neovim = {
-  #   enable = true;
-  #   package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-  # };
-
   environment.systemPackages = with pkgs; [
+    nano
     gamescope
     lazygit
     swww
