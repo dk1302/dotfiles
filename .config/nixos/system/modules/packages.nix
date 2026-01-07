@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   programs.bash.promptInit = ''PS1="  \[\e[38;5;33;1m\]<\[\e[38;5;51m\]\u\[\e[0m\]@\[\e[38;5;87m\]\H\[\e[38;5;33;1m\]> \[\e[0m\]| \[\e[38;5;33;1m\]<\[\e[0m\]\W\[\e[38;5;33;1m\]> \[\e[0;38;5;51m\]\\$\[\e[0m\]"'';
 
@@ -14,38 +14,40 @@
   programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
-    nano
-    gamescope
-    lazygit
-    swww
+    alacritty
     blender
-    wireshark
-    stow
-    rofi
-    nemo
     fastfetch
-    unzip
-    swaynotificationcenter
-    waybar
-    waypaper
+    fd
+    fzf
+    gamescope
+    git
+    gtk3
     hypridle
     hyprpicker
-    gtk3
-    yazi
-    tmux
-    wl-clipboard
-    poppler
-    fd
-    ripgrep
-    fzf
-    zoxide
-    alacritty
-    wl-gammarelay-rs
-    git
-    ytmdesktop
-    uwsm
+    lazygit
+    mako
+    mgba
+    nemo
     networkmanagerapplet
-    blueman
+    osu-lazer-bin
+    pamixer
+    pavucontrol
+    poppler
+    ripgrep
+    rofi
+    stow
+    swww
+    tmux
+    tshark
+    unzip
+    uwsm
+    waybar
+    waypaper
+    wl-clipboard
+    wl-gammarelay-rs
     xhost
+    yazi
+    ytmdesktop
+    zoxide
   ];
 }

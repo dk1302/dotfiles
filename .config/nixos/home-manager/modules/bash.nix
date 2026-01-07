@@ -7,6 +7,7 @@
     del = "nix-collect-garbage -d";
     sh = "nix-shell";
     f = "fastfetch -l ~/.nix";
+    g = "mgba-qt red.gba -p Odyssey.ups";
   };
   initExtra = ''
 eval "$(zoxide init --cmd cd bash)"

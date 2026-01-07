@@ -7,7 +7,11 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   services.blueman.enable = true;
   systemd.user.services.mpris-proxy = {
     description = "Mpris proxy";
@@ -33,6 +37,17 @@
     enable = false;
     pulse.enable = false;
   };
+
+  # services.pulseaudio.enable = false; # Use Pipewire, the modern sound subsystem
+  #
+  # security.rtkit.enable = true; # Enable RealtimeKit for audio purposes
+  #
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  # };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
