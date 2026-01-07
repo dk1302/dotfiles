@@ -1,0 +1,20 @@
+[[mgr.prepend_keymap]]
+on = "z"
+run = "rename --cursor=before_ext"
+
+[[mgr.prepend_keymap]]
+on = "R"
+run = "plugin fzf"
+
+[[mgr.prepend_keymap]]
+on = "r"
+run = "plugin zoxide"
+
+[[mgr.prepend_keymap]]
+on = "e"
+run = "shell --block --interactive"
+
+[[mgr.prepend_keymap]]
+desc = "run lazygit"
+on = ["g", "i"]
+run = "plugin lazygit"

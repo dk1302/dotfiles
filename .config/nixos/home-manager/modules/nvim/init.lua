@@ -76,36 +76,24 @@ for server, config in pairs(servers) do
   vim.lsp.enable(server)
 end
 
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if not client then return end
+
+    if client:supports_method('textDocument/formatting') then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+        end,
+      })
+    end
+  end,
+})
 
 
 
---
--- -- Colorscheme
--- vim.pack.add({"https://github.com/rktjmp/lush.nvim.git"})
--- vim.pack.add({"https://github.com/zenbones-theme/zenbones.nvim.git"})
--- vim.pack.add({"https://github.com/folke/tokyonight.nvim.git"})
--- vim.pack.add({"https://github.com/scottmckendry/cyberdream.nvim.git"})
--- vim.pack.add({"https://github.com/mistweaverco/vhs-era-theme.nvim.git"})
--- require("cyberdream").setup({
---   overrides = function(colors)
---     return {
---       ["@keyword"] = { bold = true },
---       ["@function"] = { fg = colors.blue, bold = true },
---       ["@string"] = { fg = "#82cfff" },
---     }
---   end,
---
---   colors = {
---     blue = "#ffaed7",
---     fg = "#08bdba",
---     orange = "#33b1ff",
---     purple = "#5eff6c",
---   },
---   -- Load the colorscheme here.
--- })
--- vim.o.termguicolors = true
--- vim.o.background = "dark"
--- vim.cmd[[colorscheme cyberdream]]
 
 
 
@@ -150,54 +138,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
---
--- vim.keymap.set("n", "<M-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
--- vim.keymap.set("n", "<M-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
--- vim.keymap.set("n", "<M-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
--- vim.keymap.set("n", "<M-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
---
--- vim.keymap.set("n", "<M-]>", "<C-w>v", { desc = "Split window vertically" })
--- vim.keymap.set("n", "<M-/>", "<C-w>s", { desc = "Split window horizontally" })
--- vim.keymap.set("n", "<M-->", "<cmd>q!<cr>", { desc = "Close pane" })
--- vim.keymap.set("n", "<M-w>", "<cmd>w<cr>", { desc = "Save pane" })
---
--- vim.keymap.set("n", "<M-u>", "<C-d>zt")
--- vim.keymap.set("n", "<M-i>", "<C-u>zt")
--- vim.keymap.set("n", "<M-y>", "zt")
--- vim.keymap.set("n", "<M-o>", "zb")
---
--- vim.pack.add({"https://github.com/christoomey/vim-tmux-navigator.git"})
--- vim.keymap.set("n", "<m-h>", "<cmd>TmuxNavigateLeft<cr>")
--- vim.keymap.set("n", "<m-j>", "<cmd>TmuxNavigateDown<cr>")
--- vim.keymap.set("n", "<m-k>", "<cmd>TmuxNavigateUp<cr>")
--- vim.keymap.set("n", "<m-l>", "<cmd>TmuxNavigateRight<cr>")
--- vim.keymap.set("n", "<m-\\>", "<cmd>TmuxNavigatePrevious<cr>")
-
-
-
-
-
---
--- -- Mini.nvim
--- vim.pack.add({"https://github.com/nvim-mini/mini.nvim.git"})
--- require('mini.surround').setup({
---   mappings = {
---     add = "na", -- Add surrounding in Normal and Visual modes
---     delete = "nd", -- Delete surrounding
---     find = "nf", -- Find surrounding (to the right)
---     find_left = "nF", -- Find surrounding (to the left)
---     highlight = "nh", -- Highlight surrounding
---     replace = "nr", -- Replace surrounding
---
---     suffix_last = "", -- Suffix to search with "prev" method
---     suffix_next = "", -- Suffix to search with "next" method
---   },
--- })
--- require('mini.jump2d').setup({})
-
-
-
-
 
 
 
@@ -313,54 +253,7 @@ pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "ui-select")
 
 
-
-
-
-
--- Telescope keymaps
-
--- See `:help telescope.builtin`
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-
--- Slightly advanced example of overriding default behavior and theme
-vim.keymap.set("n", "<leader>/", function()
-  -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    winblend = 10,
-    previewer = false,
-  }))
-end, { desc = "[/] Fuzzily search in current buffer" })
-
--- It's also possible to pass additional configuration options.
---  See `:help telescope.builtin.live_grep()` for information about particular keys
-vim.keymap.set("n", "<leader>s/", function()
-  builtin.live_grep({
-    grep_open_files = true,
-    prompt_title = "Live Grep in Open Files",
-  })
-end, { desc = "[S]earch [/] in Open Files" })
-
--- Shortcut for searching your Neovim configuration files
-vim.keymap.set("n", "<leader>sn", function()
-  builtin.find_files({ cwd = vim.fn.stdpath("config") })
-end, { desc = "[S]earch [N]eovim files" })
-
-vim.keymap.set(
-  "n",
-  "<leader>e",
-  "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
-  { desc = "Open telescope buffers" })
-
-
 vim.pack.add({"https://github.com/folke/which-key.nvim.git"})
 require("which-key").setup({})
+
+vim.pack.add({"https://github.com/lambdalisue/vim-suda.git"})

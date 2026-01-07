@@ -6,13 +6,13 @@
     nrs = "sudo nixos-rebuild switch --flake .#unknownd";
     del = "nix-collect-garbage -d";
     sh = "nix-shell";
-    f = "fastfetch -l ~/.nix";
+    f = "fastfetch -l ~/flake_ascii";
     g = "mgba-qt red.gba -p Odyssey.ups";
   };
   initExtra = ''
 eval "$(zoxide init --cmd cd bash)"
 eval "$(fzf --bash)"
-fastfetch -l ~/.nix
+fastfetch -l ~/flake_ascii
 if uwsm check may-start && uwsm select; then
 	exec uwsm start default
 fi
