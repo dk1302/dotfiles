@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }:
 {
+  hardware.openrazer = {
+    enable = true;
+    users = ["unknownd"];
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "dev"; # Define your hostname.

@@ -32,6 +32,7 @@
     osu-lazer-bin
     pamixer
     pavucontrol
+    polychromatic
     poppler
     ripgrep
     rofi

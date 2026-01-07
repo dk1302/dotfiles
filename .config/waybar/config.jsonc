@@ -4,7 +4,7 @@
   "reload_style_on_change": true,
   "modules-left": ["clock", "tray"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/suspend", "custom/switch", "memory", "custom/colorpicker", "pulseaudio","bluetooth"],
+  "modules-right": ["custom/suspend", "memory", "custom/colorpicker", "pulseaudio","bluetooth"],
 
 
   "hyprland/workspaces": {

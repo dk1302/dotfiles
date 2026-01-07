@@ -12,7 +12,11 @@
       ./modules/nvidia.nix
       ./modules/packages.nix
       ./modules/plymouth.nix
+      ./musnix/default.nix
     ];
+
+    musnix.enable = true;
+    users.users.unknownd.extraGroups = [ "audio" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
