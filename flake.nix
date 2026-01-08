@@ -15,7 +15,7 @@
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./system/configuration.nix
+        ./.system/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -23,7 +23,7 @@
             useUserPackages = true;
             useGlobalPkgs = true;
             backupFileExtension = "backup";
-            users.unknownd = import ./home-manager/home.nix;
+            users.unknownd = import ./.home-manager/home.nix;
           };
         }
       ];
