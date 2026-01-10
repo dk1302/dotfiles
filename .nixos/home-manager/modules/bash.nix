@@ -7,7 +7,6 @@
     del = "nix-collect-garbage -d";
     sh = "nix-shell";
     f = "fastfetch -l ~/flake_ascii";
-    g = "mgba-qt red.gba -p Odyssey.ups";
   };
   initExtra = ''
 eval "$(zoxide init --cmd cd bash)"
@@ -17,7 +16,7 @@ if uwsm check may-start && uwsm select; then
 	exec uwsm start default
 fi
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux 
+  exec tmux
 fi
 function r() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -28,7 +27,6 @@ function r() {
 }'';
   };
   home.sessionPath = [
-    "$HOME/.local/bin"
     "$HOME/.scripts"
   ];
 }

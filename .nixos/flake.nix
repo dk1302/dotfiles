@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +14,7 @@
     nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./.system/configuration.nix
+        ./system/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -23,7 +22,7 @@
             useUserPackages = true;
             useGlobalPkgs = true;
             backupFileExtension = "backup";
-            users.unknownd = import ./.home-manager/home.nix;
+            users.unknownd = import ./home-manager/home.nix;
           };
         }
       ];

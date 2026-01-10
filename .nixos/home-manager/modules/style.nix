@@ -16,7 +16,10 @@
       package = pkgs.amarena-theme;
     };
 
-    font = {name = "RecMono Nerd Font Mono"; package = pkgs.nerd-fonts.recursive-mono;};
+    font = {
+      name = "RecMono Linear Nerd Font Mono";
+      package = pkgs.nerd-fonts.recursive-mono;
+    };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme=true;

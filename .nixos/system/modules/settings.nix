@@ -43,25 +43,10 @@
     pulse.enable = false;
   };
 
-  # services.pulseaudio.enable = false; # Use Pipewire, the modern sound subsystem
-  #
-  # security.rtkit.enable = true; # Enable RealtimeKit for audio purposes
-  #
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  # };
-
   # Set your time zone.
   time.timeZone = "Europe/London";
 
   services.getty.autologinUser = "unknownd";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
