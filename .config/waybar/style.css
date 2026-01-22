@@ -33,11 +33,11 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #bluetooth:hover, #memory:hover, #pulseaudio:hover, #custom-colorpicker:hover, #custom-suspend:hover, #custom-switch:hover{
+#clock:hover, #bluetooth:hover, #memory:hover, #pulseaudio:hover, #custom-colorpicker:hover, #custom-suspend:hover, #custom-switch:hover, #custom-wallpaper:hover, #custom-web:hover{
     transition: all .3s ease;
     color:@color9;
 }
-#clock, #pulseaudio, #bluetooth, #custom-colorpicker, #memory, #custom-suspend, #custom-switch{
+#clock, #pulseaudio, #bluetooth, #custom-colorpicker, #memory, #custom-suspend, #custom-switch #custom-wallpaper, #custom-web {
     padding: 0px 5px;
     color:@color7;
     transition: all .3s ease;

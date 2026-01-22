@@ -6,12 +6,13 @@
     # Using nightly via overlay
     # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
-    plugins = with pkgs.vimPlugins;
-    [
+    plugins = with pkgs.vimPlugins; [
+      oil-nvim
+      auto-session
       nvim-treesitter
+      nvim-treesitter-parsers.glsl
       nvim-treesitter-parsers.rust
       nvim-treesitter-parsers.cpp
-      nvim-treesitter-parsers.cmake
       nvim-treesitter-parsers.c_sharp
       nvim-treesitter-parsers.typescript
       nvim-treesitter-parsers.javascript
@@ -21,20 +22,22 @@
       nvim-treesitter-parsers.python
       nvim-treesitter-parsers.toml
       nvim-treesitter-parsers.nix
+      nvim-treesitter-parsers.typst
       nvim-treesitter-textobjects
+      vim-tmux-navigator
+      typst-preview-nvim
       telescope-nvim
       blink-cmp
-      yazi-nvim
       nvim-lspconfig
       conform-nvim
       mini-nvim
       flash-nvim
       which-key-nvim
-      vim-suda
       cyberdream-nvim
       lazydev-nvim
-      vim-tmux-navigator
       lualine-nvim
+      nvim-colorizer-lua
+      fidget-nvim
       copilot-vim
     ];
 
@@ -43,9 +46,13 @@
       ${builtins.readFile ./nvim/init.lua}
 
       -- Additional config files
-      ${builtins.readFile ./nvim/theme.lua}
-      ${builtins.readFile ./nvim/mini.lua}
-      ${builtins.readFile ./nvim/keymaps.lua}
+      ${builtins.readFile ./nvim/keymap.lua}
+      ${builtins.readFile ./nvim/plugins/lsp.lua}
+      ${builtins.readFile ./nvim/plugins/treesitter.lua}
+      ${builtins.readFile ./nvim/plugins/telescope.lua}
+      ${builtins.readFile ./nvim/plugins/misc.lua}
+      ${builtins.readFile ./nvim/style/theme.lua}
+      ${builtins.readFile ./nvim/style/lualine.lua}
     '';
   };
 }

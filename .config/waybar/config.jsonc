@@ -4,7 +4,7 @@
   "reload_style_on_change": true,
   "modules-left": ["clock", "tray"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/suspend", "memory", "custom/colorpicker", "pulseaudio","bluetooth"],
+  "modules-right": ["custom/suspend", "custom/wallpaper", "custom/web", "custom/colorpicker", "pulseaudio","bluetooth"],
 
 
   "hyprland/workspaces": {
@@ -53,8 +53,18 @@
       "interval": "once",
       "on-click": "~/.scripts/switch_theme",
   },
+  "custom/wallpaper": {
+      "format": "󰸉 ",
+      "interval": "once",
+      "on-click": "waypaper",
+  },
+  "custom/web": {
+      "format": "󰈹",
+      "interval": "once",
+      "on-click": "firefox",
+  },
   "custom/suspend": {
-      "format": "󰤄",
+      "format": "󰤄 ",
       "interval": "once",
       "on-click": "systemctl suspend",
   },

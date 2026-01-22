@@ -1,29 +1,4 @@
--- Colorscheme
--- vim.pack.add({"https://github.com/rktjmp/lush.nvim.git"})
--- vim.pack.add({"https://github.com/zenbones-theme/zenbones.nvim.git"})
--- vim.pack.add({"https://github.com/folke/tokyonight.nvim.git"})
--- vim.pack.add({"https://github.com/scottmckendry/cyberdream.nvim.git"})
--- vim.pack.add({"https://github.com/mistweaverco/vhs-era-theme.nvim.git"})
-require("cyberdream").setup({
-	overrides = function(colors)
-		return {
-			["@keyword"] = { bold = true },
-			["@function"] = { fg = colors.blue, bold = true },
-			["@string"] = { fg = "#82cfff" },
-		}
-	end,
-
-	colors = {
-		blue = "#ffaed7",
-		fg = "#08bdba",
-		orange = "#33b1ff",
-		purple = "#5eff6c",
-	},
-	-- Load the colorscheme here.
-})
-vim.o.termguicolors = true
-vim.o.background = "dark"
-vim.cmd([[colorscheme cyberdream]])
+-- Lualine setup
 
 local colors = {
 	blue = "#80a0ff",
@@ -53,6 +28,7 @@ local bubbles_theme = {
 	},
 }
 
+-- vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim.git" })
 require("lualine").setup({
 	options = {
 		theme = bubbles_theme,

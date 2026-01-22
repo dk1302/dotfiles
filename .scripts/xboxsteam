@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+TARGET_MAC="3C:FA:06:27:A8:0A"
+
+while true; do
+  CONNECTED=$(bluetoothctl info "$TARGET_MAC" | grep "Connected: yes")
+  if [ -n "$CONNECTED" ]; then
+    if ! pgrep -x steam >/dev/null; then
+      steam
+    else
+      while bluetoothctl info "$TARGET_MAC" | grep -q "Connected: yes"; do
+        sleep 5
+      done
+    fi
+    sleep 30
+  else
+    sleep 5
+  fi
+done
