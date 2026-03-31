@@ -8,11 +8,14 @@
 
     plugins = with pkgs.vimPlugins; [
       oil-nvim
+      plenary-nvim
       auto-session
+      nvim-ts-autotag
       nvim-treesitter
       nvim-treesitter-parsers.glsl
       nvim-treesitter-parsers.rust
       nvim-treesitter-parsers.cpp
+      nvim-treesitter-parsers.gdscript
       nvim-treesitter-parsers.c_sharp
       nvim-treesitter-parsers.typescript
       nvim-treesitter-parsers.javascript
@@ -23,6 +26,7 @@
       nvim-treesitter-parsers.toml
       nvim-treesitter-parsers.nix
       nvim-treesitter-parsers.typst
+      nvim-treesitter-parsers.css
       nvim-treesitter-textobjects
       vim-tmux-navigator
       typst-preview-nvim
@@ -41,7 +45,7 @@
       copilot-vim
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       -- Main config
       ${builtins.readFile ./nvim/init.lua}
 

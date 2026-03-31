@@ -1,6 +1,6 @@
 -- Treesitter
 -- vim.pack.add({"https://github.com/nvim-treesitter/nvim-treesitter.git"})
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
 	-- Modules and its options go here
 	highlight = { enable = true },
 	incremental_selection = { enable = true },
@@ -46,7 +46,6 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
--- require('nvim-treesitter').setup({})
 -- require('nvim-treesitter').install({
 --     "rust",
 --     "c",

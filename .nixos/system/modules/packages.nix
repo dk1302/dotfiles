@@ -53,6 +53,8 @@
     fd
     fzf
     gamescope
+    gamemode
+    godot
     git
     gtk3
     hypridle

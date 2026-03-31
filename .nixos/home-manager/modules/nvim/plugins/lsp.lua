@@ -7,10 +7,23 @@ local servers = {
 	lua_ls = {},
 	nixd = {},
 	pyright = {},
+  gdscript = {},
 	bashls = {},
 	tinymist = {},
 	glsl_analyzer = {},
+  html = {},
+  cssls = {}
 }
+
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
 
 -- Lsp diagnostics
 

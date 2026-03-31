@@ -25,24 +25,24 @@ end, { desc = "Close side panes" })
 vim.keymap.set("n", "<M-w>", "<cmd>w<cr>", { desc = "Save pane" })
 
 -- Buffer navigation
-vim.keymap.set("n", "<M-u>", "<C-d>zt")
-vim.keymap.set("n", "<M-i>", "<C-u>zt")
-vim.keymap.set("n", "<M-y>", "zt")
-vim.keymap.set("n", "<M-o>", "zb")
+vim.keymap.set({"n", "v"}, "<M-u>", "<C-d>zz")
+vim.keymap.set({"n", "v"}, "<M-i>", "<C-u>zz")
+vim.keymap.set({"n", "v"}, "<M-y>", "H")
+vim.keymap.set({"n", "v"}, "<M-o>", "L")
+vim.keymap.set({"n", "v"}, "<M-m>", "M")
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- Terminal
 local job_id = 0
 vim.keymap.set("n", "<space>bo", function()
-	vim.cmd.vsplit()
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("H")
 	vim.api.nvim_win_set_width(0, 75)
 
 	job_id = vim.bo.channel
-end)
+end, { desc = "Open terminal" })
 
 local current_command = ""
 vim.keymap.set("n", "be", function()

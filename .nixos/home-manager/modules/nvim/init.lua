@@ -7,8 +7,8 @@ map("", "s", "<Nop>", silent)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.opt.autochdir = true
-vim.opt.number = true
 vim.opt.mouse = "a"
+vim.opt.number = true
 vim.opt.showmode = false
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufLeave", {
-	pattern = "*.{glsl,sh,toml,conf,nix,lua,cpp,hpp,c,h,rs}",
+	pattern = "*.{html,css,json,ts,gd,glsl,sh,toml,conf,nix,lua,cpp,hpp,c,h,rs}",
 	callback = function()
 		vim.cmd("w")
 	end,

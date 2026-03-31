@@ -1,5 +1,7 @@
 -- Conform.nvim
 -- vim.pack.add({ "https://github.com/stevearc/conform.nvim.git" }
+
+require("nvim-ts-autotag").setup({})
 require("auto-session").setup({
   enabled = false,
 })
@@ -52,7 +54,7 @@ require("mini.surround").setup({
 		add = "na", -- Add surrounding in Normal and Visual modes
 		delete = "nd", -- Delete surrounding
 		find = "nf", -- Find surrounding (to the right)
-		find_left = "nF", -- Find surrounding (to the left)
+		find_left = "nf", -- Find surrounding (to the left)
 		highlight = "nh", -- Highlight surrounding
 		replace = "nr", -- Replace surrounding
 
