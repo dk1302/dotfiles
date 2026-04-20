@@ -1,11 +1,49 @@
 #!/usr/bin/env bash
 
-chosen=$(printf " Suspend\n Restart\n Switch\n Log Out" | rofi -dmenu -i -theme ~/.config/rofi/config.rasi)
+dir="$HOME/.config/rofi"
+theme='powermenu'
 
-case "$chosen" in
-	"  Suspend") systemctl suspend ;;
-	" Restart") systemctl reboot ;;
-	" Switch") systemctl reboot --firmware ;;
-	"  Log Out") hyprctl dispatch exit ;;
-	*) exit 1 ;;
+# CMDs
+uptime="`uptime | sed -e 's/up //g'`"
+host=`hostname`
+
+# Options
+firmware=' '
+shutdown=' ⏻'
+reboot=' '
+suspend=' 󰤄'
+logout=' 󰗽'
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$USER@$host" \
+		-mesg "User: Unknown D | System: NixOS" \
+		-theme ${dir}/${theme}.rasi
+    -modi "--confirm=''"
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$suspend\n$logout\n$firmware\n$reboot\n$shutdown" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    "${shutdown}")
+        systemctl poweroff
+        ;;
+    "${reboot}")
+        systemctl reboot
+        ;;
+    "${suspend}")
+        systemctl suspend
+        ;;
+    "${logout}")
+        hyprctl dispatch exit
+        ;;
+    "${firmware}")
+        systemctl reboot --firmware
+        ;;
 esac

@@ -2,10 +2,14 @@
 {
   home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   gtk = {
     enable = true;
-    gtk2.enable = false;
-    gtk4.enable = false;
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -26,9 +30,9 @@
     };
   };
 
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-    style.package = pkgs.adwaita-qt;
-  };
+  # qt = {
+  #   enable = true;
+  #   style.name = "adwaita-dark";
+  #   style.package = pkgs.adwaita-qt;
+  # };
 }

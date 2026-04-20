@@ -10,6 +10,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
     nerd-fonts.gohufont
+    nerd-fonts.iosevka
+
   ];
 
   programs.obs-studio = {
@@ -19,7 +21,7 @@
       droidcam-obs
     ];
   };
-
+ 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -47,6 +49,7 @@
     alacritty
     blender
     btop
+    bc
     distrobox
     distrobox-tui
     fastfetch
@@ -57,8 +60,11 @@
     godot
     git
     gtk3
+    grim
     hypridle
     hyprpicker
+    hyprpaper
+    imagemagick
     lazygit
     mako
     mgba
@@ -72,7 +78,6 @@
     ripgrep
     rofi
     stow
-    swww
     tshark
     ueberzugpp
     unzip

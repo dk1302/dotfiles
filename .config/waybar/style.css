@@ -1,7 +1,7 @@
-@import url('../../.themes/waybar.css');
+@import url('../../.themes/orange.css');
 
 * {
-    font-size:14px;
+    font-size:15px;
     font-family: "RecMono Linear Nerd Font Propo";
 }
 window#waybar{
@@ -10,6 +10,7 @@ window#waybar{
 .modules-left {
     padding:7px;
     margin:10 0 5 10;
+    border: 2px solid @color9;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -17,6 +18,7 @@ window#waybar{
 .modules-center {
     padding:7px;
     margin:10 0 5 0;
+    border: 2px solid @color9;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -25,6 +27,7 @@ window#waybar{
 .modules-right {
     padding:7px;
     margin: 10 10 5 0;
+    border: 2px solid @color9;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -33,7 +36,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #bluetooth:hover, #memory:hover, #pulseaudio:hover, #custom-colorpicker:hover, #custom-suspend:hover, #custom-switch:hover, #custom-wallpaper:hover, #custom-web:hover{
+#clock:hover, #bluetooth:hover, #memory:hover, #pulseaudio:hover, #custom-colorpicker:hover, #custom-power:hover, #custom-switch:hover, #custom-wallpaper:hover, #custom-apps:hover{
     transition: all .3s ease;
     color:@color9;
 }
