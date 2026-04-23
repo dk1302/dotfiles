@@ -21,7 +21,7 @@
       droidcam-obs
     ];
   };
- 
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -82,7 +82,6 @@
     ueberzugpp
     unzip
     uwsm
-    waybar
     waypaper
     wl-clipboard
     wl-gammarelay-rs
