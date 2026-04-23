@@ -7,6 +7,7 @@
       ./modules/nvidia.nix
       ./modules/packages.nix
       ./modules/boot.nix
+      ./modules/lag.nix
       ./musnix/default.nix
     ];
 

@@ -5,7 +5,7 @@
   ...
 }:
 {
-  programs.bash.promptInit = ''PS1="  \[\e[38;5;33;1m\]<\[\e[38;5;51m\]\u\[\e[0m\]@\[\e[38;5;87m\]\H\[\e[38;5;33;1m\]> \[\e[0m\]| \[\e[38;5;33;1m\]<\[\e[0m\]\W\[\e[38;5;33;1m\]> \[\e[0;38;5;51m\]\\$\[\e[0m\]"'';
+  programs.bash.promptInit = ''PS1="  \[\e[38;5;214m\]<\[\e[38;5;160;1m\]\u\[\e[0m\]@\[\e[38;5;196m\]\H\[\e[38;5;214m\]> \[\e[0m\]| \[\e[38;5;214m\]<\[\e[0m\]\W\[\e[38;5;214m\]> \[\e[0;38;5;160m\]\\$\[\e[0m\]"'';
 
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
@@ -49,7 +49,6 @@
     alacritty
     blender
     btop
-    bc
     distrobox
     distrobox-tui
     fastfetch
@@ -69,14 +68,15 @@
     mako
     mgba
     nemo
-    networkmanagerapplet
     osu-lazer-bin
+    quickshell
     pamixer
     pavucontrol
     polychromatic
     poppler
     ripgrep
     rofi
+    slurp
     stow
     tshark
     ueberzugpp

@@ -46,15 +46,50 @@
     };
   };
 
-  services.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    extraConfig = "load-module module-switch-on-connect";
+  # services.pulseaudio = {
+  #   enable = true;
+  #   package = pkgs.pulseaudioFull;
+  #   extraConfig = "load-module module-switch-on-connect";
+  # };
+
+  # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true; # if not already enabled
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment the following
+    #jack.enable = true;
   };
 
-  services.pipewire = {
-    enable = false;
-    pulse.enable = false;
+  services.pipewire.extraConfig.pipewire."92-low-latency" = {
+    "context.properties" = {
+      "default.clock.rate" = 48000;
+      "default.clock.quantum" = 48;
+      "default.clock.min-quantum" = 48;
+      "default.clock.max-quantum" = 48;
+    };
+  };
+
+  services.pipewire.extraConfig.pipewire-pulse."92-low-latency" = {
+    "context.properties" = [
+      {
+        name = "libpipewire-module-protocol-pulse";
+        args = { };
+      }
+    ];
+    "pulse.properties" = {
+      "pulse.min.req" = "48/48000";
+      "pulse.default.req" = "48/48000";
+      "pulse.max.req" = "48/48000";
+      "pulse.min.quantum" = "48/48000";
+      "pulse.max.quantum" = "48/48000";
+    };
+    "stream.properties" = {
+      "node.latency" = "48/48000";
+      "resample.quality" = 1;
+    };
   };
 
   # Set your time zone.

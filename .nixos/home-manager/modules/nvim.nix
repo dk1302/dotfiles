@@ -9,6 +9,7 @@
     plugins = with pkgs.vimPlugins; [
       oil-nvim
       plenary-nvim
+      gruvbox-nvim
       auto-session
       nvim-ts-autotag
       nvim-treesitter

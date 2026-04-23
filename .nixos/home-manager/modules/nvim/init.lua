@@ -29,6 +29,7 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.o.termguicolors = true
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.o.clipboard = "unnamedplus"
@@ -45,7 +46,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufLeave", {
-	pattern = "*.{html,css,json,ts,gd,glsl,sh,toml,conf,nix,lua,cpp,hpp,c,h,rs}",
+	pattern = "*.{qml,rasi,html,css,json,ts,gd,glsl,sh,toml,conf,nix,lua,cpp,hpp,c,h,rs}",
 	callback = function()
 		vim.cmd("w")
 	end,
