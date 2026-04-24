@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-ps cax | grep waybar > /dev/null
+pgrep quickshell >/dev/null
 if [ $? -eq 0 ]; then
-  pkill waybar 
+  pkill quickshell
 else
-  hyprctl dispatch exec waybar
+  hyprctl dispatch exec qs
 fi

@@ -10,7 +10,7 @@ LazyLoader {
 
   PanelWindow {
     implicitWidth: 430
-    implicitHeight: 100
+    implicitHeight: 70
 
     anchors {
       top: true

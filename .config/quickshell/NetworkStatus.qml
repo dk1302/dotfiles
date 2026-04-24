@@ -5,7 +5,7 @@ import Quickshell
 
 Rectangle {
   id: network
-  x: 2372
+  x: 2371
   y: 25
 
   property bool wifiStatus: false 

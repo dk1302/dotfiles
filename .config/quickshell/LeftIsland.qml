@@ -1,7 +1,7 @@
 import QtQuick
 
 Rectangle {
-  x: 15
+  x: 12
   y: 15
   width: 355
   height: 40

@@ -1,7 +1,7 @@
 import QtQuick
 
 Text {
-  x: 30
+  x: 27
   y: 25
 
   text: Time.time

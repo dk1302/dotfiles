@@ -4,7 +4,7 @@ import Quickshell.Io
 
 Rectangle {
   x: 2480
-  y: 24
+  y: 25
 
   function getAppName(index) {
     if (index === 0) {
@@ -40,7 +40,7 @@ Rectangle {
           property bool containsMouse: false
           text: getAppName(index)
           color: containsMouse ? "#C59A58" : "#ebdbb2"
-          font.pointSize: 14 
+          font.pointSize: 13 
           font.family: "RecMono Linear Nerd Font"
           MouseArea {
             anchors.fill: parent
