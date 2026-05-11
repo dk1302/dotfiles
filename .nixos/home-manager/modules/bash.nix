@@ -10,16 +10,16 @@
     bash = {
       enable = true;
       shellAliases = {
-        nrs = "sudo nixos-rebuild switch --flake .#unknownd";
+        nrs = "cd nix && sudo nixos-rebuild switch --flake .#unknownd";
         del = "sudo nix-collect-garbage -d";
         sh = "nix-shell";
-        f = "fastfetch -l ~/flake_ascii";
+        f = "fastfetch -l ~/starfield.jpg";
         d = "distrobox-tui";
       };
       initExtra = ''
         eval "$(zoxide init --cmd cd bash)"
         eval "$(fzf --bash)"
-        fastfetch -l ~/flake_ascii
+        fastfetch -l ~/starfield.jpg
         function r() {
           local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
           yazi "$@" --cwd-file="$tmp"

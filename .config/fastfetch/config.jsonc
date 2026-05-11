@@ -1,11 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "color": {
-      "1": "#fc8eac"
-    },
+    "type": "kitty",
+    "source": "~/starfield.jpg",
+    "width": 25,
+    "height": 13,
     "padding": {
-      "left": 1,
+      "left": 3,
       "top": 1
     }
   },

@@ -1,3 +1,3 @@
 # ❄️ NixOS Hyprland Dotfiles
 
-https://github.com/user-attachments/assets/7d5a04e0-4fc6-4508-8d4c-96e27b13cfcf
+https://github.com/user-attachments/assets/b84d0e1f-258b-4d6d-8368-76213e3bf393

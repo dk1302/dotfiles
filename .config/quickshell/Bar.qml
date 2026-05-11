@@ -4,17 +4,17 @@ import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Services.Pipewire
 
 Scope {
   Variants {
     model: Quickshell.screens
 
     PanelWindow {
+      id: panel
       required property var modelData
       screen: modelData
       color: "transparent"
-
-      implicitHeight: 55
 
       anchors {
         top: true
@@ -22,16 +22,74 @@ Scope {
         right: true
       }
 
+      // Process{
+      //   id: getMonitorWidth
+      //   command: ["sh", "-c", "hyprctl monitors | awk -F' ' 'NR==2 {print $1}' | awk -F'x' '{print $1}'"]
+      //   stdout: StdioCollector {
+      //     onStreamFinished: {
+      //       var width = parseInt(this.text);
+      //       if (width) {
+      //         panel.width = width;
+      //       }
+      //     }
+      //   }
+      // }
+
+      // Process{
+      //   id: getMonitorHeight
+      //   command: ["sh", "-c", "hyprctl monitors | awk -F' ' 'NR==2 {print $1}' | awk -F'x' '{print $1,$2}' | awk -F'@' '{print $1}' | awk -F' ' '{print $2}'"]
+      //   stdout: StdioCollector {
+      //     onStreamFinished: {
+      //       var height = parseInt(this.text);
+      //       if (height) {
+      //         panel.height = height;
+      //       }
+      //     }
+      //   }
+      // }
+
+      implicitHeight: 55
+
+      SystemClock {
+        id: clock
+        precision: SystemClock.Minutes
+      }
+
+      function checkTime() {
+        if (Qt.formatDateTime(clock.date, "d") > 9) {
+          return true
+        } else {
+          return false
+        }
+      }
+
+      PwObjectTracker {
+        objects: [ Pipewire.defaultAudioSink ]
+      }
+
+      function checkVolume()  {
+        if (Math.round(100 * Pipewire.defaultAudioSink?.audio.volume) > 9) {
+          return true
+        } else {
+          return false
+        }
+      }
+
+      property int panelY: 25
+
+      property int leftIslandX: 10
       LeftIsland {}
 
       Clock{}
 
       Apps {}
 
+      property int middleIslandX: 1215
       MiddleIsland {}
 
       Workspaces {}
 
+      property int rightIslandX: checkVolume() ? 2315 : 2325
       RightIsland {}
 
       Power {}

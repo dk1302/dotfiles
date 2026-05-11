@@ -1,9 +1,32 @@
--- Conform.nvim
--- vim.pack.add({ "https://github.com/stevearc/conform.nvim.git" }
+-- Harpoon
+local harpoon = require("harpoon")
 
+-- REQUIRED
+harpoon:setup({})
+-- REQUIRED
+
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end, { desc = "Harpoon Add File" })
+
+vim.keymap.set("n", "<m-p>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<m-[>", function()
+	harpoon:list():prev()
+end)
+vim.keymap.set("n", "<m-]>", function()
+	harpoon:list():next()
+end)
+
+-- Nvim-ts-autotag
 require("nvim-ts-autotag").setup({})
+
+-- Auto-session
 require("auto-session").setup({
-  enabled = false,
+	enabled = false,
 })
 -- select a session to load
 vim.keymap.set("n", "<leader>e", "<cmd>AutoSession search<cr>", { desc = "Search Sessions" })
@@ -11,13 +34,16 @@ vim.keymap.set("n", "<leader>e", "<cmd>AutoSession search<cr>", { desc = "Search
 vim.keymap.set("n", "<leader>lr", "<cmd>AutoSession save<cr>", { desc = "Save Session" })
 
 vim.keymap.set("n", "<leader>ln", function()
-  local session = vim.fn.input("Session: ")
-  vim.cmd("AutoSession save " .. session)
+	local session = vim.fn.input("Session: ")
+	vim.cmd("AutoSession save " .. session)
 end, { desc = "Create New Session" })
 
 vim.keymap.set("n", "<leader>lq", "<cmd>AutoSession deletePicker<cr>", { desc = "Delete Session" })
 
+-- Fidget.nvim
 require("fidget").setup({})
+
+-- Oil.nvim
 require("oil").setup({
 	keymaps = {
 		["l"] = "actions.select",
@@ -27,6 +53,9 @@ require("oil").setup({
 	},
 })
 vim.keymap.set("n", "<Esc>h", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Conform.nvim
+-- vim.pack.add({ "https://github.com/stevearc/conform.nvim.git" }
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -76,39 +105,10 @@ vim.keymap.set({ "n", "v" }, "s", function()
 	require("flash").jump()
 end, { desc = "Flash" })
 
--- --Yazi.nvim
--- -- vim.pack.add({ "https://github.com/mikavilpas/yazi.nvim.git" })
--- vim.keymap.set("n", "<leader>r", function()
--- 	require("yazi").yazi()
--- end, { desc = "Yazi" })
---
--- vim.g.loaded_netrwPlugin = 1
--- vim.api.nvim_create_autocmd("UIEnter", {
--- 	callback = function()
--- 		require("yazi").setup({
--- 			open_for_directories = true,
--- 		})
--- 	end,
--- })
-
 -- Which-key.nvim
 -- vim.pack.add({ "https://github.com/folke/which-key.nvim.git" })
 require("which-key").setup({})
 
--- Suda.vim
--- vim.pack.add({ "https://github.com/lambdalisue/vim-suda.git" })
--- vim.keymap.set("n", "<leader>wr", "<cmd>SudaWrite<cr>", { desc = "Sudo Write" })
--- vim.keymap.set("n", "<leader>oe", "<cmd>SudaRead<cr>", { desc = "Sudo Read" })
-
---
 -- Copilot.vim
 -- vim.pack.add({ "https://github.com/github/copilot.vim.git" })
 vim.keymap.set("n", "<leader>c", "<cmd>Copilot setup<cr>", { desc = "Copilot" })
-
--- Vim-tmux-navigator
--- vim.pack.add({ "https://github.com/christoomey/vim-tmux-navigator.git" })
-vim.keymap.set("n", "<m-h>", "<cmd>TmuxNavigateLeft<cr>")
-vim.keymap.set("n", "<m-j>", "<cmd>TmuxNavigateDown<cr>")
-vim.keymap.set("n", "<m-k>", "<cmd>TmuxNavigateUp<cr>")
-vim.keymap.set("n", "<m-l>", "<cmd>TmuxNavigateRight<cr>")
-vim.keymap.set("n", "<m-\\>", "<cmd>TmuxNavigatePrevious<cr>")

@@ -15,6 +15,21 @@ on = "e"
 run = "shell --block --interactive"
 
 [[mgr.prepend_keymap]]
+desc = "copy file path"
+on = ["f", "p"]
+run = "copy path"
+
+[[mgr.prepend_keymap]]
+desc = "copy filename"
+on = ["f", "n"]
+run = "copy filename"
+
+[[mgr.prepend_keymap]]
+desc = "copy filename without extension"
+on = ["f", "e"]
+run = "copy name_without_ext"
+
+[[mgr.prepend_keymap]]
 desc = "run lazygit"
 on = ["g", "i"]
 run = "plugin lazygit"

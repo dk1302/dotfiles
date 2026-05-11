@@ -3,12 +3,12 @@ import QtQuick.Layouts
 import Quickshell.Hyprland
 
 Rectangle {
-  x: 1220
-  y: 45
+  x: middleIslandX + 5
+  y: panelY + 20
   opacity: 0.85
 
   Repeater {
-    model: 3
+    model: 3 
 
     Rectangle {
         id: workspaceContainer
@@ -20,20 +20,14 @@ Rectangle {
 
         function checkActive() {
           var x = 0
-          if (Hyprland.focusedWorkspace?.id === (1) && index === 0) {
-            x = 30
-          } else if (Hyprland.focusedWorkspace?.id === (2) && index === 1) {
-            x = 60
-          } else if (Hyprland.focusedWorkspace?.id === (3) && index === 2) {
-            x = 90
-          } else if (index === 0) {
-            x = 20
-          } else if (Hyprland.focusedWorkspace?.id === (3) && index === 1) {
-            x = 50
-          } else if (Hyprland.focusedWorkspace?.id === (1) && index === 1) {
-            x = 70
-          } else if (index === 2) {
-            x = 100
+          if (isActive) {
+            x = 30 + (index * 30)
+          } else if (Hyprland.focusedWorkspace?.id > 3) {
+            x = 20 + (index * 40)
+          } else if ((index + 1) < Hyprland.focusedWorkspace?.id) {
+            x = 20 + (index * 30)
+          } else if ((index + 1) > Hyprland.focusedWorkspace?.id) {
+            x = 40 + (index * 30)
           }
           return x
         }
@@ -53,11 +47,11 @@ Rectangle {
 
             function checkHover() {
               if (workspaceContainer.isActive) {
-                return "#ebdbb2"
+                return Colors.foreground
               } else if (workspaceIndicator.containsMouse) {
-                return workspaceContainer.hasWindows ? "#C59A58" : "#665c54"
+                return workspaceContainer.hasWindows ? Colors.border : Colors.hoverEmpty
               } else {
-                return "#16181a"
+                return Colors.empty
               }
             }
 

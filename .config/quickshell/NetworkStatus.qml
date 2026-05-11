@@ -5,8 +5,8 @@ import Quickshell
 
 Rectangle {
   id: network
-  x: 2371
-  y: 25
+  x: rightIslandX + 75
+  y: panelY
 
   property bool wifiStatus: false 
   property bool ethernetStatus: false
@@ -64,7 +64,7 @@ Rectangle {
 
     Text {
       text: network.icon
-      color: "#ebdbb2"
+      color: Colors.foreground
       font.pointSize: 12
       font.family: "RecMono Linear Nerd Font"
     }

@@ -1,11 +1,5 @@
 --Telescope.nvim
 
--- vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim.git" })
--- vim.pack.add({ "https://github.com/BurntSushi/ripgrep.git" })
--- vim.pack.add({ "https://github.com/nvim-telescope/telescope-fzf-native.nvim.git" })
--- vim.pack.add({ "https://github.com/sharkdp/fd.git" })
--- vim.pack.add({ "https://github.com/nvim-tree/nvim-web-devicons.git" })
--- vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim.git" })
 require("telescope").setup({
 	extensions = {
 		["ui-select"] = {

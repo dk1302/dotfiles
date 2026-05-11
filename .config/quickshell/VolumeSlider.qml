@@ -6,17 +6,20 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 Rectangle {
-  implicitWidth: 400
-  implicitHeight: 50
-  x: 20
+  implicitWidth: 50
+  implicitHeight: 400
   y: 10
   radius: 7
-  color: "#282828"
-  border.color: "#C59A58"
+  color: Colors.background
+  border.color: Colors.border
   border.width: 2
   opacity: 0.8
-  // x: root.x - implicitWidth / 2
-  // y: root.y + implicitHeight / 2
+
+  Timer {
+    id: exitTimer
+    interval: 1000
+    onTriggered: volumeButton.shouldShowOsd = false
+  }
 
   RowLayout {
     anchors {
@@ -28,9 +31,10 @@ Rectangle {
 
     Slider {
       id: volumeSlider
+      orientation: Qt.Vertical
       Layout.fillWidth: true
-      from: 0
-      to: 1
+      from: 0 
+      to: 1 
       stepSize: 0.01
       value: Pipewire.defaultAudioSink?.audio.volume ?? 0
 
@@ -40,14 +44,14 @@ Rectangle {
 
 
       background: Rectangle {
-          x: volumeSlider.leftPadding
-          y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
-          implicitWidth: 200
-          implicitHeight: 15
-          width: volumeSlider.availableWidth
-          height: implicitHeight
+          x: volumeSlider.leftPadding + volumeSlider.availableWidth / 2 - width / 2
+          y: volumeSlider.bottomPadding 
+          implicitWidth: 15
+          implicitHeight: 370
+          width: implicitWidth
+          height: volumeSlider.availableHeight
           radius: 7
-          color: "#16181a"
+          color: Colors.empty
 
           MouseArea {
             anchors.fill: parent
@@ -61,23 +65,18 @@ Rectangle {
             }
           }
 
-          Timer {
-            id: exitTimer
-            interval: 1000
-            onTriggered: volumeButton.shouldShowOsd = false
-          }
-
           Rectangle {
-              width: volumeSlider.visualPosition * parent.width
-              height: parent.height
-              color: "#D6CAA5"
+              y: volumeSlider.bottomPadding + (volumeSlider.availableHeight - height)
+              width: parent.width
+              height: (1 - volumeSlider.visualPosition) * parent.height
+              color: Colors.foreground
               radius: 7
           }
       }
 
       handle: Rectangle {
-          x: volumeSlider.leftPadding + volumeSlider.visualPosition * (volumeSlider.availableWidth - width)
-          y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
+          x: volumeSlider.leftPadding + volumeSlider.availableWidth / 2 - Width / 2
+          y: volumeSlider.bottomPadding + (1 - volumeSlider.visualPosition) * (volumeSlider.availableHeight - height)
           implicitWidth: 0
           implicitHeight: 0
       }

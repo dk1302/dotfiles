@@ -7,12 +7,8 @@
     # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     plugins = with pkgs.vimPlugins; [
-      oil-nvim
-      plenary-nvim
-      gruvbox-nvim
-      auto-session
-      nvim-ts-autotag
-      nvim-treesitter
+      # Treesitter parsers
+      nvim-treesitter-parsers.qmljs
       nvim-treesitter-parsers.glsl
       nvim-treesitter-parsers.rust
       nvim-treesitter-parsers.cpp
@@ -29,21 +25,29 @@
       nvim-treesitter-parsers.typst
       nvim-treesitter-parsers.css
       nvim-treesitter-textobjects
-      vim-tmux-navigator
-      typst-preview-nvim
+      # Navigation
+      plenary-nvim
       telescope-nvim
-      blink-cmp
-      nvim-lspconfig
-      conform-nvim
+      oil-nvim
+      auto-session
+      nvim-ts-autotag
+      harpoon2
       mini-nvim
       flash-nvim
-      which-key-nvim
-      cyberdream-nvim
+      # Formatting/LSP
+      conform-nvim
       lazydev-nvim
+      blink-cmp
+      nvim-lspconfig
+      # Appearance
+      gruvbox-nvim
       lualine-nvim
       nvim-colorizer-lua
       fidget-nvim
+      which-key-nvim
+      # Misc
       copilot-vim
+      typst-preview-nvim
     ];
 
     initLua = ''
@@ -53,9 +57,8 @@
       -- Additional config files
       ${builtins.readFile ./nvim/keymap.lua}
       ${builtins.readFile ./nvim/plugins/lsp.lua}
-      ${builtins.readFile ./nvim/plugins/treesitter.lua}
-      ${builtins.readFile ./nvim/plugins/telescope.lua}
       ${builtins.readFile ./nvim/plugins/misc.lua}
+      ${builtins.readFile ./nvim/plugins/telescope.lua}
       ${builtins.readFile ./nvim/style/theme.lua}
       ${builtins.readFile ./nvim/style/lualine.lua}
     '';

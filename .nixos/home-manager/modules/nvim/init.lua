@@ -45,10 +45,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufLeave", {
-	pattern = "*.{qml,rasi,html,css,json,ts,gd,glsl,sh,toml,conf,nix,lua,cpp,hpp,c,h,rs}",
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "<filetype>" },
 	callback = function()
-		vim.cmd("w")
+		vim.treesitter.start()
 	end,
 })
 

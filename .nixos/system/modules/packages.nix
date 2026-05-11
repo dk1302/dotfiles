@@ -10,8 +10,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
     nerd-fonts.gohufont
-    nerd-fonts.iosevka
-
   ];
 
   programs.gpu-screen-recorder.enable = true;
@@ -48,7 +46,6 @@
   users.users.unknownd.extraGroups = [ "podman" ];
 
   environment.systemPackages = with pkgs; [
-    alacritty
     blender
     btop
     distrobox
@@ -58,10 +55,12 @@
     fzf
     gamescope
     gamemode
+    gdb
     godot
     git
     gtk3
     grim
+    ghostty
     hypridle
     hyprpicker
     hyprpaper
@@ -76,12 +75,13 @@
     pavucontrol
     polychromatic
     poppler
+    qtcreator
     ripgrep
     rofi
     slurp
     stow
     tshark
-    ueberzugpp
+    typst
     unzip
     uwsm
     video-trimmer

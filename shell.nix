@@ -2,11 +2,14 @@ with import <nixpkgs> { };
 
 pkgs.mkShell {
   buildInputs = [
+    # typescript tools
+    typescript-language-server
+    # qt tools
+    qt6.qtbase
+    qt6.qtdeclarative
     # c/cpp tools
     clang-tools
-    gdb
     # typst tools
-    typst
     tinymist
     typstyle
     # bash tools
@@ -28,6 +31,6 @@ pkgs.mkShell {
     csharpier
   ];
 
-  RUST_SRC_PATH = "${rust.packages.stable.rustPlatform.rustLibSrc}";
-  RUST_BACKTRACE = 1;
+  # RUST_SRC_PATH = "${rust.packages.stable.rustPlatform.rustLibSrc}";
+  # RUST_BACKTRACE = 1;
 }

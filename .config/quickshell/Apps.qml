@@ -3,8 +3,8 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
-  x: 210
-  y: 25
+  x: checkTime() ? leftIslandX + 195 : leftIslandX + 180
+  y: panelY
 
   function getAppName(index) {
     if (index === 0) {
@@ -38,11 +38,11 @@ Rectangle {
   }
   Process {
     id: launcher
-    command: ["rofi", "-show", "drun", "-theme", "~/.config/rofi/apps.rasi"]
+    command: ["sh", "-c", "rofi -show drun -theme ~/.config/rofi/apps.rasi"]
   }
 
   RowLayout {
-    spacing: 2
+    spacing: 0
 
     Repeater {
       model: 5 
@@ -57,7 +57,7 @@ Rectangle {
           id: app
           property bool containsMouse: false
           text: getAppName(index)
-          color: containsMouse ? "#C59A58" : "#ebdbb2"
+          color: containsMouse ? Colors.border : Colors.foreground
           font.pointSize: 12 
           font.family: "RecMono Linear Nerd Font"
           MouseArea {

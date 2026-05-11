@@ -1,11 +1,13 @@
 import QtQuick
 
 Text {
-  x: 27
-  y: 25
+  x: leftIslandX + 15
+  y: panelY
 
+  // text: Colors.background
+  // text: Time.time
   text: Time.time
-  color: "#ebdbb2"
+  color: Colors.foreground
   font.family: "RecMono Linear Nerd Font"
   font.pointSize: 12
 }

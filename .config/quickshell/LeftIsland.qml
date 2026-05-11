@@ -1,13 +1,13 @@
 import QtQuick
 
 Rectangle {
-  x: 12
-  y: 15
-  width: 355
+  x: leftIslandX
+  y: panelY - 10
+  width: checkTime() ? 345 : 330
   height: 40
-  color: "#282828"
+  color: Colors.background
   radius: 7 
-  border.color: "#C59A58"
+  border.color: Colors.border
   border.width: 2
   opacity: 0.8
 }

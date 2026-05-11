@@ -3,8 +3,8 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
-  x: 2480
-  y: 25
+  x: checkVolume() ? rightIslandX + 175 : rightIslandX + 165
+  y: panelY
 
   function getAppName(index) {
     if (index === 0) {
@@ -20,11 +20,11 @@ Rectangle {
   }
   Process {
     id: theme
-    command: ["hyprpicker | wl-copy"]
+    command: ["sh", "-c", "hyprpicker | wl-copy"]
   }
 
   RowLayout {
-    spacing: 2
+    spacing: -2
 
     Repeater {
       model: 2
@@ -39,7 +39,7 @@ Rectangle {
           id: app
           property bool containsMouse: false
           text: getAppName(index)
-          color: containsMouse ? "#C59A58" : "#ebdbb2"
+          color: containsMouse ? Colors.border : Colors.foreground
           font.pointSize: 13 
           font.family: "RecMono Linear Nerd Font"
           MouseArea {

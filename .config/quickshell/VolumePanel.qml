@@ -9,8 +9,10 @@ LazyLoader {
   active: volumeButton.shouldShowOsd
 
   PanelWindow {
-    implicitWidth: 430
-    implicitHeight: 70
+    id: gap
+
+    implicitWidth: checkVolume() ? 140 : 135
+    implicitHeight: 430
 
     anchors {
       top: true
@@ -19,6 +21,17 @@ LazyLoader {
 
     color: "transparent"
 
-    VolumeSlider {}
+    Rectangle {
+      implicitWidth: 70
+      implicitHeight: 430
+
+      anchors.top: parent.top
+      anchors.left: parent.left
+
+      color: "transparent"
+
+      VolumeSlider {}
+    }
   }
+
 }

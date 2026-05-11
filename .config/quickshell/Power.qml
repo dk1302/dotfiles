@@ -3,8 +3,8 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
-  x: 2307
-  y: 25
+  x: rightIslandX + 18
+  y: panelY
 
   Process {
     id: power
@@ -20,7 +20,7 @@ Rectangle {
       id: app
       property bool containsMouse: false
       text: "⏻"
-      color: containsMouse ? "#C59A58" : "#ebdbb2"
+      color: containsMouse ? Colors.border : Colors.foreground
       font.pointSize: 13 
       font.family: "RecMono Linear Nerd Font"
       MouseArea {

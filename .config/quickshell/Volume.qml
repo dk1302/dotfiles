@@ -9,10 +9,6 @@ Text {
     id: volumeButton
     property bool containsMouse: false
 
-    PwObjectTracker {
-      objects: [ Pipewire.defaultAudioSink ]
-    }
-
     Connections {
       target: Pipewire.defaultAudioSink?.audio
 
@@ -28,8 +24,10 @@ Text {
       anchors.fill: parent
       hoverEnabled: true
       onEntered: {
-        volumeButton.shouldShowOsd = true;
         volumeButton.containsMouse = true;
+      }
+      onClicked: {
+        volumeButton.shouldShowOsd = true;
         hideTimer.restart();
       }
       onExited: {
@@ -39,15 +37,15 @@ Text {
 
     Timer {
       id: hideTimer
-      interval: 3000
+      interval: 2000
       onTriggered: volumeButton.shouldShowOsd = false
     }
 
-    x: 2405
-    y: 25
+    x: rightIslandX + 105
+    y: panelY
 
     text: Pipewire.defaultAudioSink?.muted ? "Muted" : "  " + Math.round(100 * Pipewire.defaultAudioSink?.audio.volume) + "%"
-    color: containsMouse ? "#C59A58" : "#ebdbb2"
+    color: containsMouse ? Colors.border : Colors.foreground
     font.family: "RecMono Linear Nerd Font"
     font.pointSize: 12
 

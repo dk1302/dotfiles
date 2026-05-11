@@ -5,8 +5,8 @@ import Quickshell.Bluetooth
 
 Rectangle {
   id: bluetooth
-  x: 2340
-  y: 23
+  x: rightIslandX + 48
+  y: panelY - 2
 
   property var adapter: Bluetooth.defaultAdapter
   property var connectedDevices: Bluetooth.devices.values.filter(d => d.connected)
@@ -27,7 +27,7 @@ Rectangle {
       id: icon
       property bool containsMouse: false
       text: hasConnection && isEnabled ? "" : isEnabled ? "󰂯 " : "󰂲"
-      color: containsMouse ? "#C59A58" : "#ebdbb2"
+      color: containsMouse ? Colors.border : Colors.foreground
       font.pointSize: 15
       font.family: "RecMono Linear Nerd Font"
       MouseArea {
