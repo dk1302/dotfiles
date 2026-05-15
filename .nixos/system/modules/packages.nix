@@ -10,6 +10,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
     nerd-fonts.gohufont
+    gohufont
   ];
 
   programs.gpu-screen-recorder.enable = true;

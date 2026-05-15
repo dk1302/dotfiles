@@ -2,9 +2,9 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "source": "~/starfield.jpg",
-    "width": 25,
-    "height": 13,
+    "source": "~/starfield_new.jpg",
+    "width": 18,
+    "height": 9,
     "padding": {
       "left": 3,
       "top": 1

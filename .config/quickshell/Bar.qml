@@ -48,7 +48,7 @@ Scope {
       //   }
       // }
 
-      implicitHeight: 55
+      implicitHeight: 40
 
       SystemClock {
         id: clock
@@ -75,9 +75,16 @@ Scope {
         }
       }
 
-      property int panelY: 25
+      Rectangle {
+        anchors.fill: parent
+        height: 40
+        color: Colors.background
+        opacity: 0.4
+      }
 
-      property int leftIslandX: 10
+      property int panelY: 10
+
+      property int leftIslandX: 0
       LeftIsland {}
 
       Clock{}
@@ -89,10 +96,10 @@ Scope {
 
       Workspaces {}
 
-      property int rightIslandX: checkVolume() ? 2315 : 2325
+      property int rightIslandX: checkVolume() ? 2325 : 2335
       RightIsland {}
 
-      Power {}
+      PanelButton {}
 
       Bluetooth {}
 

@@ -5,7 +5,6 @@ import Quickshell.Hyprland
 Rectangle {
   x: middleIslandX + 5
   y: panelY + 20
-  opacity: 0.85
 
   Repeater {
     model: 3 
@@ -55,7 +54,7 @@ Rectangle {
               }
             }
 
-
+            opacity: isActive || containsMouse ? 0.85 : 1
 
             color: checkHover()
             Behavior on color {
@@ -71,7 +70,7 @@ Rectangle {
               }
             }
             implicitHeight: 20
-            radius: 10
+            radius: 20
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
 

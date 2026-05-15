@@ -4,22 +4,16 @@ import Quickshell.Services.Pipewire
 import Quickshell.Widgets
 import QtQuick.Layouts
 import QtQuick.Controls
+import Quickshell.Io
 
 Rectangle {
-  implicitWidth: 50
-  implicitHeight: 400
-  y: 10
-  radius: 7
-  color: Colors.background
-  border.color: Colors.border
-  border.width: 2
-  opacity: 0.8
+  id: volumeSliderContainer
+  implicitWidth: 418
+  implicitHeight: 50
+  y: 4
+  x: 2
+  color: "transparent"
 
-  Timer {
-    id: exitTimer
-    interval: 1000
-    onTriggered: volumeButton.shouldShowOsd = false
-  }
 
   RowLayout {
     anchors {
@@ -28,10 +22,8 @@ Rectangle {
       rightMargin: 15
     }
 
-
     Slider {
       id: volumeSlider
-      orientation: Qt.Vertical
       Layout.fillWidth: true
       from: 0 
       to: 1 
@@ -42,41 +34,52 @@ Rectangle {
         Pipewire.defaultAudioSink.audio.volume = value;
       }
 
-
       background: Rectangle {
-          x: volumeSlider.leftPadding + volumeSlider.availableWidth / 2 - width / 2
-          y: volumeSlider.bottomPadding 
-          implicitWidth: 15
-          implicitHeight: 370
-          width: implicitWidth
-          height: volumeSlider.availableHeight
+          id: sliderBackground
+          property bool clicked: false
+          x: volumeSlider.leftPadding
+          y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
+          implicitWidth: 200
+          implicitHeight: 20
+          width: volumeSlider.availableWidth
+          height: implicitHeight
           radius: 7
           color: Colors.empty
 
-          MouseArea {
-            anchors.fill: parent
-            hoverEnabled: true
-            onEntered: {
-              hideTimer.stop();
-              exitTimer.stop();
-            }
-            onExited: {
-              exitTimer.restart();
+          Timer {
+            id: hideTimer
+            interval: 500
+            onTriggered: {
+              panelButton.shouldShowOsd = false
             }
           }
 
+          Connections {
+            target: Pipewire.defaultAudioSink.audio
+
+            onVolumeChanged: {
+              sliderBackground.clicked = true
+            }
+          }
+
+          MouseArea {
+            anchors.fill: parent
+            hoverEnabled: sliderBackground.clicked ? true : false
+            onEntered: hideTimer.stop()
+            onExited: hideTimer.restart()
+          }
+
           Rectangle {
-              y: volumeSlider.bottomPadding + (volumeSlider.availableHeight - height)
-              width: parent.width
-              height: (1 - volumeSlider.visualPosition) * parent.height
+              width: volumeSlider.visualPosition * parent.width
+              height: parent.height
               color: Colors.foreground
               radius: 7
           }
       }
 
       handle: Rectangle {
-          x: volumeSlider.leftPadding + volumeSlider.availableWidth / 2 - Width / 2
-          y: volumeSlider.bottomPadding + (1 - volumeSlider.visualPosition) * (volumeSlider.availableHeight - height)
+          x: volumeSlider.leftPadding + volumeSlider.visualPosition * (volumeSlider.availableWidth - width)
+          y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
           implicitWidth: 0
           implicitHeight: 0
       }

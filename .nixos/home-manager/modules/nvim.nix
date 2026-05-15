@@ -40,7 +40,7 @@
       blink-cmp
       nvim-lspconfig
       # Appearance
-      gruvbox-nvim
+      gruvbox-material-nvim
       lualine-nvim
       nvim-colorizer-lua
       fidget-nvim
