@@ -1,44 +1,5 @@
--- Harpoon
-local harpoon = require("harpoon")
-
--- REQUIRED
-harpoon:setup({})
--- REQUIRED
-
-vim.keymap.set("n", "<leader>a", function()
-	harpoon:list():add()
-end, { desc = "Harpoon Add File" })
-
-vim.keymap.set("n", "<m-p>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<m-[>", function()
-	harpoon:list():prev()
-end)
-vim.keymap.set("n", "<m-]>", function()
-	harpoon:list():next()
-end)
-
 -- Nvim-ts-autotag
 require("nvim-ts-autotag").setup({})
-
--- Auto-session
-require("auto-session").setup({
-	enabled = false,
-})
--- select a session to load
-vim.keymap.set("n", "<leader>e", "<cmd>AutoSession search<cr>", { desc = "Search Sessions" })
--- load the last session
-vim.keymap.set("n", "<leader>lr", "<cmd>AutoSession save<cr>", { desc = "Save Session" })
-
-vim.keymap.set("n", "<leader>ln", function()
-	local session = vim.fn.input("Session: ")
-	vim.cmd("AutoSession save " .. session)
-end, { desc = "Create New Session" })
-
-vim.keymap.set("n", "<leader>lq", "<cmd>AutoSession deletePicker<cr>", { desc = "Delete Session" })
 
 -- Fidget.nvim
 require("fidget").setup({})
@@ -67,11 +28,11 @@ require("conform").setup({
 		bash = { "shfmt" },
 		typst = { "typstyle" },
 	},
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_format = "fallback",
-	},
 })
+
+vim.keymap.set("n", "<leader>f", function()
+  require("conform").format({ async = true })
+end, { desc = "Format file" })
 
 require("typst-preview").setup({ invert_colors = "always" })
 vim.keymap.set("n", "<leader>p", "<cmd>TypstPreview<cr>", { desc = "Typst Preview Start" })
@@ -91,7 +52,6 @@ require("mini.surround").setup({
 		suffix_next = "", -- Suffix to search with "next" method
 	},
 })
-require("mini.jump2d").setup({})
 require("mini.splitjoin").setup({})
 require("mini.move").setup({})
 

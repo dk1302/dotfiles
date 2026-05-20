@@ -1,0 +1,14 @@
+format = """$nix_shell $directory$character"""
+
+[directory]
+read_only = '  '
+style = 'bold yellow'
+home_symbol = ' 󱞩 '
+truncate_to_repo = false
+
+[character]
+success_symbol = '[\$](bold)'
+error_symbol = '[\$](bold red)'
+
+[nix_shell]
+format = "[ ❄️ $name ]($style)[󰄠 ](bold)\n"

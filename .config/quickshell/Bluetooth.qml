@@ -26,16 +26,52 @@ Rectangle {
     Text {
       id: icon
       property bool containsMouse: false
+      property bool clicked: false
       text: hasConnection && isEnabled ? "" : isEnabled ? "󰂯 " : "󰂲"
-      color: containsMouse ? Colors.border : Colors.foreground
-      font.pointSize: 15
+      color: containsMouse ? Colors.border : Colors.foregroundAlt
+      font.pointSize: clicked ? 10 : 15
+      x: clicked ? 2 : 0
+      y: clicked ? 4 : 0
       font.family: "RecMono Linear Nerd Font"
+
+      Behavior on color {
+        ColorAnimation {
+          duration: 150
+        }
+      }
+
+      Behavior on font.pointSize {
+        NumberAnimation {
+          duration: 100
+          easing.type: Easing.InOutQuad
+        }
+      }
+
+      Behavior on x {
+        NumberAnimation {
+          duration: 100
+          easing.type: Easing.InOutQuad
+        }
+      }
+
+      Behavior on y {
+        NumberAnimation {
+          duration: 100
+          easing.type: Easing.InOutQuad
+        }
+      }
+
       MouseArea {
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: blueman.startDetached()
+        onPressed: {
+          icon.clicked = true
+          blueman.startDetached()
+        }
+        onReleased: icon.clicked = false
         onEntered: icon.containsMouse = true
         onExited: icon.containsMouse = false
+
       }
 
     }

@@ -66,50 +66,116 @@ Rectangle {
       Rectangle {
         id: powerButton
         property bool containsMouse: false
-        color: containsMouse ? Colors.active : Colors.backgroundAlt
+        property bool clicked: false
+        color: checkColorEvent()
+        border.color: Colors.background
+        border.width: checkBorderWidth()
         implicitWidth: 65
         implicitHeight: 65
         radius: 10
-        // border.color: Colors.active
-        // border.color: containsMouse ? Colors.active : Colors.empty
-        // border.width: 2
-        // opacity: 0.9
+
+        Behavior on color {
+          ColorAnimation {
+            duration: 100
+          }
+        }
+
+        Behavior on border.width {
+          PropertyAnimation {
+            duration: 100
+            easing.type: Easing.InOutQuint
+          }
+        }
+
+        function checkColorEvent() {
+          if (powerButton.clicked) {
+            return Colors.backgroundAlt
+          } else if (powerButton.containsMouse) {
+            return Colors.active
+          } else {
+            return Colors.backgroundAlt
+          }
+        }
+
+        function checkBorderWidth() {
+          if (powerButton.clicked) {
+            return 4
+          } else {
+            return 0
+          }
+        }
 
         MouseArea {
           anchors.fill: parent
           hoverEnabled: true
-          onClicked: {
-            if (index === 0) {
-              sleep.startDetached();
-              panelButton.shouldShowOsd = false;
-            } else if (index === 1) {
-              exit.startDetached();
-              panelButton.shouldShowOsd = false
-            } else if (index === 2) {
-              firmware.startDetached();
-              panelButton.shouldShowOsd = false
-            } else if (index === 3) {
-              reboot.startDetached();
-              panelButton.shouldShowOsd = false
-            } else {
-              shutdown.startDetached();
-              panelButton.shouldShowOsd = false
-            }
+          onPressed: {
+            powerButton.clicked = true
+            clickTimer.restart()
+            closeTimer.restart()
           }
           onEntered: {
             powerButton.containsMouse = true
-            hideTimer.stop();
           }
-          onExited: powerButton.containsMouse = false
+          onExited: {
+            powerButton.containsMouse = false
+            powerButton.clicked = false
+          }
+
+          Timer {
+            id: closeTimer
+            interval: 300
+            onTriggered: {
+              if (index === 0) {
+                sleep.startDetached();
+                panelButton.shouldShowOsd = false;
+              } else if (index === 1) {
+                exit.startDetached();
+                panelButton.shouldShowOsd = false
+              } else if (index === 2) {
+                firmware.startDetached();
+                panelButton.shouldShowOsd = false
+              } else if (index === 3) {
+                reboot.startDetached();
+                panelButton.shouldShowOsd = false
+              } else {
+                shutdown.startDetached();
+                panelButton.shouldShowOsd = false
+              }
+            }
+          }
+
+          Timer {
+            id: clickTimer
+            interval: 150
+            onTriggered: {
+              powerButton.clicked = false
+            }
+          }
         }
 
         Text {
           x: iconPosition(index)
           y: parent.height / 4
           text: getPowerIcon(index)
-          color: powerButton.containsMouse ? Colors.empty : Colors.foreground
+          color: checkTextColor()
           font.pointSize: 22
           font.family: "RecMono Linear Nerd Font"
+
+          // Behavior on color {
+          //   ColorAnimation {
+          //     duration: 100
+          //   }
+          // }
+        }
+
+        function checkTextColor() {
+          if (powerButton.clicked) {
+            return Colors.background
+          } else if (powerButton.containsMouse) {
+            return Colors.empty
+          } else {
+            return Colors.foreground
+          }
         }
       }
     }

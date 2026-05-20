@@ -96,7 +96,7 @@ Scope {
 
       Workspaces {}
 
-      property int rightIslandX: checkVolume() ? 2325 : 2335
+      property int rightIslandX: checkVolume() ? 2330 : 2340
       RightIsland {}
 
       PanelButton {}
@@ -106,6 +106,8 @@ Scope {
       NetworkStatus {}
 
       Volume {}
+
+      VolumeValue {}
 
       Theme {}
 

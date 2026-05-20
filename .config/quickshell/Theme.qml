@@ -3,14 +3,14 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
-  x: checkVolume() ? rightIslandX + 175 : rightIslandX + 165
+  x: checkVolume() ? rightIslandX + 173 : rightIslandX + 163
   y: panelY
 
   function getAppName(index) {
     if (index === 0) {
       return "󰸉"
     } else {
-      return ""
+      return ""
     }
   }
 
@@ -38,20 +38,53 @@ Rectangle {
         Text {
           id: app
           property bool containsMouse: false
+          property bool clicked: false
           text: getAppName(index)
-          color: containsMouse ? Colors.border : Colors.foreground
-          font.pointSize: 13 
+          color: containsMouse ? Colors.border : Colors.foregroundAlt
+          font.pointSize: clicked ? 9 : 13 
+          x: clicked ? 2 : 0
+          y: clicked ? 3 : 0
           font.family: "RecMono Linear Nerd Font"
+
+          Behavior on color {
+            ColorAnimation {
+              duration: 150
+            }
+          }
+
+          Behavior on font.pointSize {
+            NumberAnimation {
+              duration: 100
+              easing.type: Easing.InOutQuad
+            }
+          }
+
+          Behavior on x {
+            NumberAnimation {
+              duration: 100
+              easing.type: Easing.InOutQuad
+            }
+          }
+
+          Behavior on y {
+            NumberAnimation {
+              duration: 100
+              easing.type: Easing.InOutQuad
+            }
+          }
+
           MouseArea {
             anchors.fill: parent
             hoverEnabled: true
-            onClicked: {
+            onPressed: {
+              app.clicked = true
               if (index === 0) {
                 wallpaper.startDetached()
               } else {
                 theme.startDetached()
               } 
             }
+            onReleased: app.clicked = false
             onEntered: app.containsMouse = true
             onExited: app.containsMouse = false
           }

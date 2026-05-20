@@ -14,11 +14,7 @@
     ./modules/boot.nix
     ./modules/lgc.nix
     ./modules/lmc.nix
-    ./musnix/default.nix
   ];
-
-  musnix.enable = true;
-  users.users.unknownd.extraGroups = [ "audio" ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }

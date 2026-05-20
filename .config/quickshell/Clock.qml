@@ -5,7 +5,7 @@ Text {
   y: panelY
 
   text: Time.time
-  color: Colors.foreground
+  color: Colors.foregroundAlt
   font.family: "RecMono Linear Nerd Font"
   font.pointSize: 12
 }

@@ -14,13 +14,7 @@ LazyLoader {
     Rectangle {
       implicitWidth: 420
       implicitHeight: 140
-      // y: 20
-      // x: 2060
-      radius: 7
       color: Colors.background
-      // opacity: 0.8
-      // border.color: Colors.active
-      // border.width: 2
 
       VolumeSlider {}
 

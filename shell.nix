@@ -1,6 +1,7 @@
 with import <nixpkgs> { };
 
 pkgs.mkShell {
+  name = "system";
   buildInputs = [
     # typescript tools
     typescript-language-server
@@ -15,22 +16,19 @@ pkgs.mkShell {
     # bash tools
     bash-language-server
     shfmt
-    # rust tools
-    rustc
-    rust-analyzer
-    cargo
-    rustfmt
     # nix tools
     nixd
     nixfmt
     #lua tools
     lua-language-server
     stylua
-    # csharp tools
+    # rust tools
+    rustc
+    rust-analyzer
+    cargo
+    rustfmt
+    #csharp tools
     csharp-ls
     csharpier
   ];
-
-  # RUST_SRC_PATH = "${rust.packages.stable.rustPlatform.rustLibSrc}";
-  # RUST_BACKTRACE = 1;
 }

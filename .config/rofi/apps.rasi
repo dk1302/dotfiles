@@ -3,18 +3,6 @@ configuration {
   me-select-entry: "";
   me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
 
-  run {
-    display-name: "[^.^]";
-  }
-
-  window {
-    display-name: "[°.°]";
-  }
-
-  dmenu {
-    display-name: "[*.*]";
-  }
-
   timeout {
     delay: 10;
     action: "kb-cancel";
@@ -23,12 +11,19 @@ configuration {
   modi:                       "drun";
   show-icons:                 true;
   display-drun:               "[^.^] ";
-	drun-display-format:        "{name}";
+  drun-display-format:        "{name}";
 }
 
 /*****----- Global Properties -----*****/
-@import                          "colors/gruvbox.rasi"
-@import                          "fonts/appfonts.rasi"
+* {
+    font: "RecMono Linear Nerd Font 15";
+    background:     #282828FF;
+    background-alt: #353535FF;
+    foreground:     #EBDBB2FF;
+    selected:       #83A598FF;
+    active:         #B8BB26FF;
+    urgent:         #FB4934FF;
+}
 
 /*****----- Main Window -----*****/
 window {
@@ -37,7 +32,7 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       800px;
-    x-offset:                    20px;
+    x-offset:                    200px;
     y-offset:                    0px;
 
     enabled:                     true;

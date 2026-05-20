@@ -7,7 +7,6 @@ vim.keymap.set({ "n", "v" }, "<M-u>", "<C-d>zz")
 vim.keymap.set({ "n", "v" }, "<M-i>", "<C-u>zz")
 vim.keymap.set({ "n", "v" }, "<M-y>", "H")
 vim.keymap.set({ "n", "v" }, "<M-o>", "L")
--- vim.keymap.set({"n", "v"}, "<M-m>", "M")
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 

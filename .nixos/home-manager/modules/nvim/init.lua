@@ -29,8 +29,10 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.o.termguicolors = true
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.termguicolors = true
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox-material]])
 
 vim.o.clipboard = "unnamedplus"
 vim.schedule(function()

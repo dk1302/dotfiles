@@ -12,21 +12,14 @@
       shellAliases = {
         nrs = "cd nix && sudo nixos-rebuild switch --flake .#unknownd";
         del = "sudo nix-collect-garbage -d";
-        sh = "nix-shell";
         f = "fastfetch -l ~/starfield_new.jpg";
-        d = "distrobox-tui";
       };
       initExtra = ''
+        export STARSHIP_CONFIG=~/.config/starship/starship.toml
+        eval "$(starship init bash)"
         eval "$(zoxide init --cmd cd bash)"
         eval "$(fzf --bash)"
         fastfetch -l ~/starfield_new.jpg
-        function r() {
-          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-          yazi "$@" --cwd-file="$tmp"
-          IFS= read -r -d "" cwd < "$tmp"
-          [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-          rm -f -- "$tmp"
-        }
       '';
       profileExtra = ''
         if uwsm check may-start && uwsm select; then

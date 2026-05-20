@@ -40,15 +40,23 @@ Rectangle {
           x: volumeSlider.leftPadding
           y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
           implicitWidth: 200
-          implicitHeight: 20
+          implicitHeight: clicked ? 20 : 15
+          opacity: clicked ? 1 : 0.8
           width: volumeSlider.availableWidth
           height: implicitHeight
           radius: 7
           color: Colors.empty
 
+          Behavior on implicitHeight {
+            PropertyAnimation {
+              duration: 200
+              easing.type: Easing.InOutQuint
+            }
+          }
+
           Timer {
             id: hideTimer
-            interval: 500
+            interval: 300
             onTriggered: {
               panelButton.shouldShowOsd = false
             }
@@ -64,9 +72,15 @@ Rectangle {
 
           MouseArea {
             anchors.fill: parent
-            hoverEnabled: sliderBackground.clicked ? true : false
+            hoverEnabled: true
             onEntered: hideTimer.stop()
-            onExited: hideTimer.restart()
+            onPressed: sliderBackground.clicked = true
+            onExited: {
+              if (sliderBackground.clicked) {
+                sliderBackground.clicked = false
+                hideTimer.restart()
+              }
+            }
           }
 
           Rectangle {

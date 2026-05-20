@@ -1,10 +1,7 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
-
-    # Using nightly via overlay
-    # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     plugins = with pkgs.vimPlugins; [
       # Treesitter parsers
@@ -40,7 +37,7 @@
       blink-cmp
       nvim-lspconfig
       # Appearance
-      gruvbox-material-nvim
+      gruvbox-material
       lualine-nvim
       nvim-colorizer-lua
       fidget-nvim
@@ -59,8 +56,9 @@
       ${builtins.readFile ./nvim/plugins/lsp.lua}
       ${builtins.readFile ./nvim/plugins/misc.lua}
       ${builtins.readFile ./nvim/plugins/telescope.lua}
-      ${builtins.readFile ./nvim/style/theme.lua}
-      ${builtins.readFile ./nvim/style/lualine.lua}
+      ${builtins.readFile ./nvim/plugins/lualine.lua}
+      ${builtins.readFile ./nvim/plugins/autosession.lua}
+      ${builtins.readFile ./nvim/plugins/harpoon.lua}
     '';
   };
 }

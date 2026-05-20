@@ -10,25 +10,17 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = {self, nixpkgs, home-manager, ...}:
     {
       nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
         modules = [
           ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              extraSpecialArgs = { inherit inputs; };
               useUserPackages = true;
               useGlobalPkgs = true;
-              backupFileExtension = "backup";
               users.unknownd = import ./home-manager/home.nix;
             };
           }

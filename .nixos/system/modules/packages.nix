@@ -5,23 +5,12 @@
   ...
 }:
 {
-  programs.bash.promptInit = ''PS1="  \[\e[38;5;214m\]<\[\e[38;5;160;1m\]\u\[\e[0m\]@\[\e[38;5;196m\]\H\[\e[38;5;214m\]> \[\e[0m\]| \[\e[38;5;214m\]<\[\e[0m\]\W\[\e[38;5;214m\]> \[\e[0;38;5;160m\]\\$\[\e[0m\]"'';
-
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
-    nerd-fonts.gohufont
-    gohufont
+    nerd-fonts.terminess-ttf
   ];
 
   programs.gpu-screen-recorder.enable = true;
-
-  programs.obs-studio = {
-    enable = true;
-    enableVirtualCamera = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      droidcam-obs
-    ];
-  };
 
   programs.hyprland = {
     enable = true;
@@ -35,26 +24,12 @@
 
   programs.nix-ld.enable = true;
 
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
-    };
-  };
-
-  users.users.unknownd.extraGroups = [ "podman" ];
-
   environment.systemPackages = with pkgs; [
     blender
     btop
-    distrobox
-    distrobox-tui
     fastfetch
     fd
     fzf
-    gamescope
     gamemode
     gdb
     godot
@@ -62,17 +37,14 @@
     gtk3
     grim
     ghostty
-    hypridle
     hyprpicker
     hyprpaper
     imagemagick
-    lazygit
     mako
     mgba
     nemo
     osu-lazer-bin
     quickshell
-    pamixer
     pavucontrol
     polychromatic
     poppler
@@ -80,8 +52,8 @@
     ripgrep
     rofi
     slurp
+    starship
     stow
-    tshark
     typst
     unzip
     uwsm

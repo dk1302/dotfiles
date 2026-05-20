@@ -5,6 +5,7 @@ import Quickshell.Hyprland
 Rectangle {
   x: middleIslandX + 5
   y: panelY + 20
+  opacity: 0.8
 
   Repeater {
     model: 3 
@@ -46,22 +47,28 @@ Rectangle {
 
             function checkHover() {
               if (workspaceContainer.isActive) {
-                return Colors.foreground
+                return Colors.foregroundAlt
               } else if (workspaceIndicator.containsMouse) {
-                return workspaceContainer.hasWindows ? Colors.border : Colors.hoverEmpty
+                return workspaceContainer.hasWindows ? Colors.border : Colors.active
               } else {
-                return Colors.empty
+                return Colors.foreground
               }
             }
 
-            opacity: isActive || containsMouse ? 0.85 : 1
-
-            color: checkHover()
-            Behavior on color {
+            color: "transparent"
+            border.color: checkHover()
+            border.width: workspaceIndicator.containsMouse || workspaceContainer.isActive ? 5 : 2
+            Behavior on border.color {
               ColorAnimation {
                 duration: 150
               }
             }
+            Behavior on border.width {
+              NumberAnimation {
+                duration: 150
+              }
+            }
+
             implicitWidth: parent.isActive ? 40: 20
             Behavior on implicitWidth {
               PropertyAnimation {
@@ -84,7 +91,7 @@ Rectangle {
               }
 
               onEntered: workspaceIndicator.containsMouse = true
-              onClicked: Hyprland.dispatch("workspace " + (index + 1))
+              onPressed: Hyprland.dispatch("workspace " + (index + 1))
               onExited: workspaceIndicator.containsMouse = false
             }
         }

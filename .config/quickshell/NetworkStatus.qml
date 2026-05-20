@@ -64,7 +64,7 @@ Rectangle {
 
     Text {
       text: network.icon
-      color: Colors.foreground
+      color: Colors.foregroundAlt
       font.pointSize: 12
       font.family: "RecMono Linear Nerd Font"
     }

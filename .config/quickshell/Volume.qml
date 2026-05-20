@@ -6,11 +6,11 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 Text {
-    x: rightIslandX + 105
+    x: rightIslandX + 107
     y: panelY
 
-    text: Pipewire.defaultAudioSink?.muted ? "Muted" : "  " + Math.round(100 * Pipewire.defaultAudioSink?.audio.volume) + "%"
-    color: Colors.foreground
+    text: " "
+    color: Colors.foregroundAlt
     font.family: "RecMono Linear Nerd Font"
     font.pointSize: 12
 }

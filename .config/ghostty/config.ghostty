@@ -19,15 +19,13 @@ palette = 13=#b16286
 palette = 14=#689d6a
 palette = 15=#a89984
 
-font-family = "GohuFont"
-font-style-bold = false
-font-size = "16"
-adjust-cell-height = 5%
-adjust-icon-height = -20%
+font-family = "Terminess Nerd Font"
+font-size = "12"
+adjust-icon-height = -30%
 
-keybind = ctrl+q=close_surface
-keybind = ctrl+o=new_split:left
-keybind = ctrl+h=goto_split:previous
-keybind = ctrl+l=goto_split:next
-keybind = ctrl+n=resize_split:left,700
-keybind = ctrl+m=resize_split:right,700
+keybind = alt+q=close_surface
+keybind = alt+o=new_split:left
+keybind = alt+;=goto_split:previous
+keybind = alt+'=goto_split:next
+keybind = alt+n=resize_split:left,690
+keybind = alt+m=resize_split:right,690

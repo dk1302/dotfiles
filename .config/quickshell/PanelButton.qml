@@ -5,14 +5,42 @@ import Quickshell.Io
 
 Text {
   id: panelButton
-  x: rightIslandX + 18
-  y: panelY - 3
+  x: clicked ? rightIslandX + 20 : rightIslandX + 18
+  y: clicked ? panelY : panelY - 4 
   property bool shouldShowOsd: false
   property bool containsMouse: false
-  text: "󰮫"
-  color: containsMouse ? Colors.border : Colors.foreground
-  font.pointSize: 17 
+  property bool clicked: false
+  text: "󰍜"
+  color: containsMouse ? Colors.border : Colors.foregroundAlt
+  font.pointSize: clicked ? 13 : 17 
   font.family: "RecMono Linear Nerd Font"
+
+  Behavior on color {
+    ColorAnimation {
+      duration: 150
+    }
+  }
+
+  Behavior on font.pointSize {
+    NumberAnimation {
+      duration: 100
+      easing.type: Easing.InOutQuad
+    }
+  }
+
+  Behavior on x {
+    NumberAnimation {
+      duration: 100
+      easing.type: Easing.InOutQuad
+    }
+  }
+
+  Behavior on y {
+    NumberAnimation {
+      duration: 100
+      easing.type: Easing.InOutQuad
+    }
+  }
 
   Process {
     id: noFocus
@@ -27,16 +55,19 @@ Text {
   MouseArea {
     anchors.fill: parent
     hoverEnabled: true
-    onClicked: {
+    onPressed: {
+      panelButton.clicked = true
+      clickTimer.restart()
       shouldShowOsd = !shouldShowOsd;
-      // if (shouldShowOsd) {
-      //   noFocus.running = true;
-      // } else {
-      //   focus.running = true;
-      // }
     }
     onEntered: panelButton.containsMouse = true
     onExited: panelButton.containsMouse = false
+
+    Timer {
+      id: clickTimer
+      interval: 150
+      onTriggered: panelButton.clicked = false
+    }
   }
 
   Panel {}
