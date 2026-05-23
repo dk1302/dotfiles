@@ -1,5 +1,17 @@
 { config, lib, pkgs, ... }:
 {
+  boot.loader = {
+    systemd-boot.enable = true;
+    systemd-boot.consoleMode = "max";
+    efi.canTouchEfiVariables = true;
+    timeout = 5;
+  };
+
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+  };
+
   services.udisks2.enable = true;
 
   services.avahi = {
@@ -47,6 +59,8 @@
       Experimental = true;
     };
   };
+
+  services.pulseaudio.enable = false;
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
   security.rtkit.enable = true;

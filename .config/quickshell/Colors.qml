@@ -6,6 +6,7 @@ import QtQuick
 Singleton {
   readonly property color background: "#282828"
   readonly property color backgroundAlt: "#353535"
+  readonly property color backgroundPale: "#3B3735"
   readonly property color foreground: "#ebdbb2"
   readonly property color foregroundAlt: "#fbf1c7"
   readonly property color border: "#C59A58"

@@ -21,6 +21,7 @@
       nvim-treesitter-parsers.nix
       nvim-treesitter-parsers.typst
       nvim-treesitter-parsers.css
+      nvim-treesitter-parsers.razor
       nvim-treesitter-textobjects
       # Navigation
       plenary-nvim
@@ -28,12 +29,10 @@
       oil-nvim
       auto-session
       nvim-ts-autotag
-      harpoon2
       mini-nvim
       flash-nvim
       # Formatting/LSP
       conform-nvim
-      lazydev-nvim
       blink-cmp
       nvim-lspconfig
       # Appearance
@@ -43,7 +42,7 @@
       fidget-nvim
       which-key-nvim
       # Misc
-      copilot-vim
+      minuet-ai-nvim
       typst-preview-nvim
     ];
 
@@ -52,13 +51,12 @@
       ${builtins.readFile ./nvim/init.lua}
 
       -- Additional config files
-      ${builtins.readFile ./nvim/keymap.lua}
       ${builtins.readFile ./nvim/plugins/lsp.lua}
       ${builtins.readFile ./nvim/plugins/misc.lua}
       ${builtins.readFile ./nvim/plugins/telescope.lua}
       ${builtins.readFile ./nvim/plugins/lualine.lua}
       ${builtins.readFile ./nvim/plugins/autosession.lua}
-      ${builtins.readFile ./nvim/plugins/harpoon.lua}
+      ${builtins.readFile ./nvim/plugins/minuet.lua}
     '';
   };
 }

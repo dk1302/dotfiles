@@ -34,6 +34,16 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox-material]])
 
+vim.keymap.set("n", "<M-->", "<cmd>qa!<cr>", { desc = "Close all pane" })
+vim.keymap.set("n", "-", "<cmd>q!<cr>", { desc = "Close current pane" })
+vim.keymap.set("n", "<M-w>", "<cmd>w<cr>", { desc = "Save pane" })
+
+-- Buffer navigation
+vim.keymap.set({ "n", "v" }, "<M-u>", "<C-d>zz")
+vim.keymap.set({ "n", "v" }, "<M-i>", "<C-u>zz")
+
+vim.keymap.set("n", "<leader>t", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
+
 vim.o.clipboard = "unnamedplus"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
@@ -52,34 +62,4 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.treesitter.start()
 	end,
-})
-
---Blink.cmp (Must be before lspconfig setup)
--- vim.pack.add({ "https://github.com/folke/lazydev.nvim.git" })
--- vim.pack.add({ { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') } })
-require("blink.cmp").setup({
-	keymap = {
-		preset = "enter",
-		["<M-y>"] = { "select_and_accept" },
-	},
-
-	appearance = {
-		nerd_font_variant = "mono",
-	},
-
-	completion = {
-		documentation = { auto_show = false, auto_show_delay_ms = 500 },
-	},
-
-	sources = {
-		default = { "lsp", "path", "snippets", "buffer", "lazydev" },
-		providers = {
-			lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
-		},
-	},
-
-	fuzzy = { implementation = "rust" },
-
-	-- Shows a signature help window while you type arguments for a function
-	signature = { enabled = true },
 })

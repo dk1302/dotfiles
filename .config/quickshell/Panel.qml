@@ -14,7 +14,7 @@ LazyLoader {
     Rectangle {
       implicitWidth: 420
       implicitHeight: 140
-      color: Colors.background
+      color: Colors.backgroundPale
 
       VolumeSlider {}
 

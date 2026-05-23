@@ -17,13 +17,13 @@
     enable = true;
 
     iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
+      name = "oomox-gruvbox-dark";
+      package = pkgs.gruvbox-dark-icons-gtk;
     };
 
     theme = {
-      name = "amarena";
-      package = pkgs.amarena-theme;
+      name = "gruvbox-dark";
+      package = pkgs.gruvbox-dark-gtk;
     };
 
     font = {

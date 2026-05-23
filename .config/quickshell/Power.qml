@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Io
+import Quickshell.Hyprland
 
 Rectangle {
   y: 55
@@ -40,7 +41,8 @@ Rectangle {
   }
   Process {
     id: exit
-    command: ["sh", "-c", "hyprctl dispatch exit"]
+    command: ["sh", "-c", "hyprctl dispatch 'hl.dsp.exit()'"]
+    // command: ["sh", "-c", "hyprctl dispatch exit"]
   }
   Process {
     id: firmware
@@ -68,7 +70,7 @@ Rectangle {
         property bool containsMouse: false
         property bool clicked: false
         color: checkColorEvent()
-        border.color: Colors.background
+        border.color: Colors.backgroundPale
         border.width: checkBorderWidth()
         implicitWidth: 65
         implicitHeight: 65
@@ -89,11 +91,11 @@ Rectangle {
 
         function checkColorEvent() {
           if (powerButton.clicked) {
-            return Colors.backgroundAlt
+            return Colors.background
           } else if (powerButton.containsMouse) {
             return Colors.active
           } else {
-            return Colors.backgroundAlt
+            return Colors.background
           }
         }
 

@@ -69,6 +69,4 @@ end, { desc = "Flash" })
 -- vim.pack.add({ "https://github.com/folke/which-key.nvim.git" })
 require("which-key").setup({})
 
--- Copilot.vim
--- vim.pack.add({ "https://github.com/github/copilot.vim.git" })
-vim.keymap.set("n", "<leader>c", "<cmd>Copilot setup<cr>", { desc = "Copilot" })
+vim.pack.add({"https://github.com/jlcrochet/vim-razor.git"})

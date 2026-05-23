@@ -17,10 +17,6 @@ pcall(require("telescope").load_extension, "ui-select")
 -- See `:help telescope.builtin`
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
-vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-vim.keymap.set("n", "<leader>sf", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 -- Slightly advanced example of overriding default behavior and theme
 vim.keymap.set("n", "<leader>/", function()
@@ -29,7 +25,7 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 
 vim.keymap.set("n", "<leader>s.", function()
 	builtin.live_grep(themes.get_dropdown({ winblend = 10, previewer = false }))
-end, { desc = "[/] Fuzzily search in current buffer" })
+end, { desc = "[/] Live grep in current buffer" })
 
 vim.keymap.set("n", "<leader>sd", function()
 	builtin.diagnostics(themes.get_dropdown({ bufnr = 0, winblend = 10, previewer = false }))

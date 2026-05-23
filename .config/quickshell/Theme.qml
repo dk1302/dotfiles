@@ -8,6 +8,8 @@ Rectangle {
 
   function getAppName(index) {
     if (index === 0) {
+      return "󰐝"
+    } else if (index === 1) {
       return "󰸉"
     } else {
       return ""
@@ -22,12 +24,16 @@ Rectangle {
     id: theme
     command: ["sh", "-c", "hyprpicker | wl-copy"]
   }
+  Process {
+    id: gba
+    command: ["sh", "-c", "cd ~/gba && mgba-qt red.gba -p Odyssey.ups"]
+  }
 
   RowLayout {
     spacing: -2
 
     Repeater {
-      model: 2
+      model: 3
 
       Rectangle {
         color: "transparent"
@@ -79,6 +85,8 @@ Rectangle {
             onPressed: {
               app.clicked = true
               if (index === 0) {
+                gba.startDetached()
+              } else if (index === 1) {
                 wallpaper.startDetached()
               } else {
                 theme.startDetached()

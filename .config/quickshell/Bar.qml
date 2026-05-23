@@ -91,12 +91,12 @@ Scope {
 
       Apps {}
 
-      property int middleIslandX: 1215
+      property int middleIslandX: 1200
       MiddleIsland {}
 
       Workspaces {}
 
-      property int rightIslandX: checkVolume() ? 2330 : 2340
+      property int rightIslandX: checkVolume() ? 2300 : 2310
       RightIsland {}
 
       PanelButton {}

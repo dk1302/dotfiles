@@ -8,7 +8,7 @@ Rectangle {
   opacity: 0.8
 
   Repeater {
-    model: 3 
+    model: 4 
 
     Rectangle {
         id: workspaceContainer
@@ -22,7 +22,7 @@ Rectangle {
           var x = 0
           if (isActive) {
             x = 30 + (index * 30)
-          } else if (Hyprland.focusedWorkspace?.id > 3) {
+          } else if (Hyprland.focusedWorkspace?.id > 4) {
             x = 20 + (index * 40)
           } else if ((index + 1) < Hyprland.focusedWorkspace?.id) {
             x = 20 + (index * 30)
@@ -85,13 +85,9 @@ Rectangle {
               anchors.fill: parent
               hoverEnabled: true
 
-              function clickWorkspace() {
-                Hyprland.dispatch("workspace " + (index + 1))
-                return true
-              }
-
               onEntered: workspaceIndicator.containsMouse = true
-              onPressed: Hyprland.dispatch("workspace " + (index + 1))
+              onPressed: Hyprland.dispatch("hl.dsp.focus({ workspace = " + (index + 1) + " })")
+              // onPressed: Hyprland.dispatch("workspace " + (index + 1))
               onExited: workspaceIndicator.containsMouse = false
             }
         }

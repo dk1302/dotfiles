@@ -3,25 +3,49 @@
   "logo": {
     "type": "kitty",
     "source": "~/starfield_new.jpg",
-    "width": 18,
-    "height": 8,
+    "width": 16,
+    "height": 7,
     "padding": {
       "left": 3,
-      "top": 2 
+      "top": 1
     }
+  },
+  "display": {
+    "separator": ""
+    // "color": {
+    //   "keys": "bold_yellow"
+    // }
   },
   "modules": [
     "break",
-    "title",
-    "separator",
-    "os",
-    "host",
-    "uptime",
-    "theme",
-    "gpu",
-    "memory",
-    "disk",
-    "break",
-    "colors"
+    { 
+      "type": "title",
+      "format": "{#white}\u250c──────────── {#bold_blue}{user-name}{#bold_white}@{#bold_blue}{host-name}{#white} ────────────\u2510"
+    },
+    {
+      "type": "os",
+      "format": "        {pretty-name} {arch}  {#white}\u2502"
+    },
+    {
+      "type": "theme",
+      "format": "     {theme2}        {#white}\u2502"
+    },
+    {
+      "type": "gpu",
+      "format": "       {name}             {#white}\u2502"
+    },
+    {
+      "type": "memory",
+      "format": "    {used} / {total}         {#white}\u2502"
+    },
+    {
+      "type": "disk",
+      "key": "Disk",
+      "format": "      {size-used} / {size-total} ({size-percentage})    {#white}\u2502"
+    },
+    { 
+      "type": "custom",
+        "format": "{#white}\u2514─────────────────{#bold_magenta}   {#white}─────────────────\u2518"
+    }
   ]
 }

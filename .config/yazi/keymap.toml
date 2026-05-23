@@ -4,7 +4,7 @@ run = "plugin bookmarks save"
 desc = "Save current position as a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "p" ]
+on = [ "'" ]
 run = "plugin bookmarks jump"
 desc = "Jump to a bookmark"
 
@@ -17,22 +17,3 @@ desc = "Delete a bookmark"
 on = [ "b", "D" ]
 run = "plugin bookmarks delete_all"
 desc = "Delete all bookmarks"
-
-[[mgr.prepend_keymap]]
-on = "e"
-run = "shell --block --interactive"
-
-[[mgr.prepend_keymap]]
-desc = "copy file path"
-on = ["f", "p"]
-run = "copy path"
-
-[[mgr.prepend_keymap]]
-desc = "copy filename"
-on = ["f", "n"]
-run = "copy filename"
-
-[[mgr.prepend_keymap]]
-desc = "copy filename without extension"
-on = ["f", "e"]
-run = "copy name_without_ext"

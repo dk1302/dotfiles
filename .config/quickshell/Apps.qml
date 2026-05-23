@@ -10,10 +10,8 @@ Rectangle {
     if (index === 0) {
       return ""
     } else if (index === 1) {
-      return "󰐝"
-    } else if (index === 2) {
       return ""
-    } else if (index === 3) {
+    } else if (index === 2) {
       return ""
     } else {
       return ""
@@ -21,24 +19,16 @@ Rectangle {
   }
 
   Process {
-    id: files
-    command: ["nemo"]
-  }
-  Process {
     id: steam
-    command: ["steam"]
-  }
-  Process {
-    id: gba
-    command: ["sh", "-c", "cd ~/gba && mgba-qt red.gba -p Odyssey.ups"]
+    command: ["sh", "-c", "steam"]
   }
   Process {
     id: firefox
-    command: ["firefox"]
+    command: ["sh", "-c", "firefox"]
   }
   Process {
     id: music
-    command: ["ytmdesktop"]
+    command: ["sh", "-c", "ytmdesktop"]
   }
   Process {
     id: launcher
@@ -49,7 +39,7 @@ Rectangle {
     spacing: 0
 
     Repeater {
-      model: 5 
+      model: 4 
 
       Rectangle {
         color: "transparent"
@@ -63,6 +53,10 @@ Rectangle {
           property bool containsMouse: false
           text: getAppName(index)
           color: containsMouse ? Colors.border : Colors.foregroundAlt
+          font.pointSize: checkPointSize()
+          font.family: "RecMono Linear Nerd Font"
+          x: checkX()
+          y: checkY()
 
           Behavior on color {
             ColorAnimation {
@@ -71,30 +65,28 @@ Rectangle {
           }
 
           function checkPointSize() {
-            if (index != 1 && index != 2) {
+            if (index != 1) {
               return clicked ? 8 : 12
             } else {
               return clicked ? 10 : 14
             }
           }
-          font.pointSize: checkPointSize()
+
           function checkY() {
-            if (index == 1 || index == 2) {
-              return clicked ? 1 : -2 
-            } else {
+            if (index != 1) {
               return clicked ? 3 : 0
+            } else {
+              return clicked ? 2 : -2
             }
           }
+
           function checkX() {
-            if (index == 3) {
-              return clicked ? 4 : 2 
+            if (index != 1) {
+              return clicked ? -1 : -3
             } else {
-              return clicked ? 3 : 0
+              return clicked ? -3 : -6
             }
           }
-          x: checkX()
-          y: checkY()
-          font.family: "RecMono Linear Nerd Font"
 
           Behavior on font.pointSize {
             NumberAnimation {
@@ -125,10 +117,8 @@ Rectangle {
               if (index === 0) {
                 firefox.startDetached()
               } else if (index === 1) {
-                gba.startDetached()
-              } else if (index === 2) {
                 steam.startDetached()
-              } else if (index === 3) {
+              } else if (index === 2) {
                 music.startDetached()
               } else {
                 clickTimer.restart()
@@ -136,7 +126,7 @@ Rectangle {
               }
             }
             onReleased: {
-              if(index < 4) {
+              if(index < 3) {
                 app.clicked = false
               }
             }
