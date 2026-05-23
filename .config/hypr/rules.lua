@@ -11,7 +11,6 @@ hl.window_rule({
 	size = { 400, 500 },
 	move = { 1950, 220 },
 })
-hl.window_rule({ match = { initial_title = "Ghostty" }, workspace = "2" })
 hl.window_rule({ match = { class = "io.mgba.mGBA" }, float = true, center = true, size = { 700, 500 } })
 hl.window_rule({ match = { title = "Polychromatic" }, float = true, center = true, size = { 700, 700 } })
 hl.window_rule({ match = { title = "Picture-in-Picture" }, float = true, center = true, size = { 700, 500 } })

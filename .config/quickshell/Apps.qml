@@ -20,7 +20,7 @@ Rectangle {
 
   Process {
     id: steam
-    command: ["sh", "-c", "steam"]
+    command: ["sh", "-c", "hyprctl dispatch \"hl.dsp.exec_cmd('steam')\""]
   }
   Process {
     id: firefox
