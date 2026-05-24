@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 {
   boot.loader = {
-    systemd-boot.enable = true;
-    systemd-boot.consoleMode = "max";
-    efi.canTouchEfiVariables = true;
-    timeout = 5;
+      systemd-boot.enable = true;
+      systemd-boot.consoleMode = "max";
+      efi.canTouchEfiVariables = true;
+      timeout = 5;
   };
 
   services.ollama = {

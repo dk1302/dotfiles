@@ -16,15 +16,14 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 
 hl.config({
-	misc = {
-		force_default_wallpaper = 1,
-		disable_hyprland_logo = true,
-	},
-
 	input = {
 		kb_layout = "us",
 		follow_mouse = 2,
 		sensitivity = 0,
+	},
+
+	binds = {
+		drag_threshold = 10,
 	},
 })
 
