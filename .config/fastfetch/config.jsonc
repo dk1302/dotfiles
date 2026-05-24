@@ -41,7 +41,7 @@
     {
       "type": "disk",
       "key": "Disk",
-      "format": "      {size-used} / {size-total} ({size-percentage})    {#white}\u2502"
+      "format": "      {size-used} / {size-total} ({size-percentage})   {#white}\u2502"
     },
     { 
       "type": "custom",
