@@ -42,16 +42,6 @@ Text {
     }
   }
 
-  Process {
-    id: noFocus
-    command: ["sh", "-c", "hyprctl dispatch setprop active opacity 0.65 override"]
-  }
-
-  Process {
-    id: focus
-    command: ["sh", "-c", "hyprctl dispatch setprop active opacity 1 override"]
-  }
-
   MouseArea {
     anchors.fill: parent
     hoverEnabled: true

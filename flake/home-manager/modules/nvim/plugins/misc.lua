@@ -22,11 +22,9 @@ require("conform").setup({
 		lua = { "stylua" },
 		rust = { "rustfmt" },
 		csharp = { "csharpier" },
-		typescript = { "prettier" },
-		javascript = { "prettier" },
-		python = { "black" },
 		bash = { "shfmt" },
 		typst = { "typstyle" },
+    c = { "clang-format" },
 	},
 })
 

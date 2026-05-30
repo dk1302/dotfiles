@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -11,6 +12,8 @@
   ];
 
   programs.gpu-screen-recorder.enable = true;
+
+  # programs.mango.enable = true;
 
   programs.hyprland = {
     enable = true;
@@ -31,13 +34,13 @@
     fastfetch
     fzf
     gamemode
-    gdb
-    godot
     git
     gtk3
     ghostty
+    hypridle
     hyprpicker
     hyprpaper
+    hyprsunset
     imagemagick
     lazygit
     mako
@@ -47,7 +50,6 @@
     quickshell
     polychromatic
     poppler
-    qtcreator
     rofi
     starship
     stow
@@ -57,7 +59,6 @@
     video-trimmer
     waypaper
     wl-clipboard
-    wl-gammarelay-rs
     xhost
     yazi
     ytmdesktop

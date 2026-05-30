@@ -7,7 +7,7 @@ hl.monitor({
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd(
-		"hyprpaper & waypaper --restore & wl-gammarelay-rs & qs & xhost +SI:localuser:root & ghostty"
+		"waypaper --restore & qs & xhost +SI:localuser:root"
 	)
 end)
 

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wl-gammarelay-rs watch "{t}K {bp}%"

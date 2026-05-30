@@ -29,3 +29,5 @@ keybind = alt+;=goto_split:previous
 keybind = alt+'=goto_split:next
 keybind = alt+n=resize_split:left,490
 keybind = alt+m=resize_split:right,490
+
+confirm-close-surface = false

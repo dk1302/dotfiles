@@ -1,18 +1,11 @@
 local servers = {
 	rust_analyzer = {},
-	clangd = {},
 	csharp_ls = {},
-	csharpier = {},
-	ts_ls = {},
 	lua_ls = {},
 	nixd = {},
-	pyright = {},
-	gdscript = {},
 	bashls = {},
 	tinymist = {},
-	glsl_analyzer = {},
-	html = {},
-	cssls = {},
+  clangd = {},
 }
 
 vim.lsp.config("lua_ls", {

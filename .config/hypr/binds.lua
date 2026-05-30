@@ -1,13 +1,21 @@
 hl.bind("CTRL + SHIFT + F", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/apps.rasi"))
 hl.bind(
-	"CTRL + SHIFT + Up",
-	hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -500")
+  "CTRL + SHIFT + C",
+  hl.dsp.exec_cmd("hyprctl hyprsunset temperature +500")
 )
 hl.bind(
-	"CTRL + SHIFT + Down",
-	hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +500")
+	"CTRL + SHIFT + W",
+	hl.dsp.exec_cmd("hyprctl hyprsunset temperature -500")
 )
-hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("ghostty"))
+hl.bind(
+  "CTRL + SHIFT + D",
+  hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10")
+)
+hl.bind(
+  "CTRL + SHIFT + U",
+  hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10")
+)
+hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("ghostty +new-window"))
 hl.bind("CTRL + SHIFT + F", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/apps.rasi"))
 hl.bind("CTRL + SHIFT + R", hl.dsp.exec_cmd("toggle_bar"))
 

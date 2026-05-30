@@ -9,6 +9,7 @@
       nvim-treesitter-parsers.glsl
       nvim-treesitter-parsers.rust
       nvim-treesitter-parsers.cpp
+      nvim-treesitter-parsers.c
       nvim-treesitter-parsers.gdscript
       nvim-treesitter-parsers.c_sharp
       nvim-treesitter-parsers.typescript

@@ -10,7 +10,7 @@
     bash = {
       enable = true;
       shellAliases = {
-        nrs = "cd ~/update && sudo nixos-rebuild switch --flake .#unknownd";
+        nrs = "cd ~/flake && sudo nixos-rebuild switch --flake .#unknownd";
         sdel = "sudo nix-collect-garbage -d";
         del = "nix-collect-garbage -d";
         f = "fastfetch";
