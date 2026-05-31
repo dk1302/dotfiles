@@ -6,21 +6,15 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-
-    };
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, mangowm, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, ...}@inputs:
     {
       nixosConfigurations.unknownd = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
-          # mangowm.nixosModules.mango
           ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {

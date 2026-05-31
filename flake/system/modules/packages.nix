@@ -13,8 +13,6 @@
 
   programs.gpu-screen-recorder.enable = true;
 
-  # programs.mango.enable = true;
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
