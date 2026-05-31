@@ -31,6 +31,7 @@
     fastfetch
     fzf
     gamemode
+    gammastep
     git
     gtk3
     ghostty
@@ -38,6 +39,7 @@
     hyprpicker
     imagemagick
     lazygit
+    macchina
     mako
     mgba
     nemo
@@ -54,7 +56,6 @@
     video-trimmer
     waypaper
     wl-clipboard
-    gammastep
     xhost
     yazi
     ytmdesktop

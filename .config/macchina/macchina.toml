@@ -1,0 +1,2 @@
+theme = "minimal"
+show = ["Host", "Kernel", "Distribution", "DesktopEnvironment", "Shell", "Terminal", "Memory"]

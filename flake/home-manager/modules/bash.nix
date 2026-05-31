@@ -13,7 +13,7 @@
         nrs = "cd ~/flake && sudo nixos-rebuild switch --flake .#unknownd";
         sdel = "sudo nix-collect-garbage -d";
         del = "nix-collect-garbage -d";
-        f = "fastfetch";
+        m = "macchina";
         qwen = "ollama run qwen2.5-coder:7b";
       };
       initExtra = ''
@@ -22,7 +22,7 @@
         eval "$(starship init bash)"
         eval "$(zoxide init --cmd cd bash)"
         eval "$(fzf --bash)"
-        fastfetch
+        macchina
         function r() {
           local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
           command yazi "$@" --cwd-file="$tmp"
