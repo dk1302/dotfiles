@@ -17,6 +17,7 @@
         qwen = "ollama run qwen2.5-coder:7b";
       };
       initExtra = ''
+        PATH=$PATH:~/scripts
         export STARSHIP_CONFIG=~/.config/starship/starship.toml
         eval "$(starship init bash)"
         eval "$(zoxide init --cmd cd bash)"
@@ -30,14 +31,6 @@
           command rm -f -- "$tmp"
         }
       '';
-      profileExtra = ''
-        if uwsm check may-start && uwsm select; then
-          exec uwsm start default
-        fi
-      '';
     };
   };
-  home.sessionPath = [
-    "$HOME/scripts"
-  ];
 }

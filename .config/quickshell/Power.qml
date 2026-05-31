@@ -41,8 +41,7 @@ Rectangle {
   }
   Process {
     id: exit
-    command: ["sh", "-c", "hyprctl dispatch 'hl.dsp.exit()'"]
-    // command: ["sh", "-c", "hyprctl dispatch exit"]
+    command: ["sh", "-c", "mmsg dispatch quit"]
   }
   Process {
     id: firmware

@@ -3,5 +3,5 @@ pgrep quickshell >/dev/null
 if [ $? -eq 0 ]; then
   pkill quickshell
 else
-  hyprctl dispatch "hl.dsp.exec_cmd('qs')"
+  mmsg dispatch spawn,qs
 fi

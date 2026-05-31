@@ -20,7 +20,7 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
-          # mangowm.nixosModules.mango
+          mangowm.nixosModules.mango
           ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {

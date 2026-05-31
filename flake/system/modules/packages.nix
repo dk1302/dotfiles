@@ -13,13 +13,9 @@
 
   programs.gpu-screen-recorder.enable = true;
 
-  # programs.mango.enable = true;
+  programs.mango.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
-  };
+  programs.dconf.enable = true;
 
   programs.firefox.enable = true;
 
@@ -28,6 +24,7 @@
   programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
+    awww
     blender
     btop
     claude-code
@@ -39,8 +36,6 @@
     ghostty
     hypridle
     hyprpicker
-    hyprpaper
-    hyprsunset
     imagemagick
     lazygit
     mako
@@ -59,6 +54,7 @@
     video-trimmer
     waypaper
     wl-clipboard
+    gammastep
     xhost
     yazi
     ytmdesktop

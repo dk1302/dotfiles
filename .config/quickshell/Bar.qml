@@ -91,6 +91,8 @@ Scope {
 
       Apps {}
 
+      // Test {}
+
       property int middleIslandX: 1200
       MiddleIsland {}
 

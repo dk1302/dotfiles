@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Hyprland
+import Quickshell.Io
 
 Rectangle {
   x: middleIslandX + 5
@@ -14,19 +14,19 @@ Rectangle {
         id: workspaceContainer
         color: "transparent"
 
-        property var workspace: Hyprland.workspaces.values.find(ws => ws.id === index + 1) ?? null
-        property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
-        property bool hasWindows: workspace !== null
+        property int activeTag: DwlService.activeTag
+        property bool isActive: index + 1 === activeTag
+        property bool hasWindows: DwlService.clients[index] > 0
 
         function checkActive() {
           var x = 0
           if (isActive) {
             x = 30 + (index * 30)
-          } else if (Hyprland.focusedWorkspace?.id > 4) {
+          } else if (activeTag > 4) {
             x = 20 + (index * 40)
-          } else if ((index + 1) < Hyprland.focusedWorkspace?.id) {
+          } else if ((index + 1) < activeTag) {
             x = 20 + (index * 30)
-          } else if ((index + 1) > Hyprland.focusedWorkspace?.id) {
+          } else if ((index + 1) > activeTag) {
             x = 40 + (index * 30)
           }
           return x
@@ -36,7 +36,7 @@ Rectangle {
 
         Behavior on x {
           PropertyAnimation {
-            duration: 300;
+            duration: 200;
             easing.type: Easing.InOutQuint
           }
         }
@@ -72,7 +72,7 @@ Rectangle {
             implicitWidth: parent.isActive ? 40: 20
             Behavior on implicitWidth {
               PropertyAnimation {
-                duration: 300
+                duration: 200
                 easing.type: Easing.InOutQuint
               }
             }
@@ -81,13 +81,17 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
 
+            Process {
+              id: view
+              command: ["mmsg", "dispatch", "view,", (index+1)]
+            }
+
             MouseArea {
               anchors.fill: parent
               hoverEnabled: true
 
               onEntered: workspaceIndicator.containsMouse = true
-              onPressed: Hyprland.dispatch("hl.dsp.focus({ workspace = " + (index + 1) + " })")
-              // onPressed: Hyprland.dispatch("workspace " + (index + 1))
+              onPressed: DwlService.switchToTag(view)
               onExited: workspaceIndicator.containsMouse = false
             }
         }
