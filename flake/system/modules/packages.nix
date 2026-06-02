@@ -41,13 +41,13 @@
     jq
     lazygit
     mako
-    mgba
     nemo
     osu-lazer-bin
     quickshell
     polychromatic
     poppler
     rofi
+    skyemu
     starship
     stow
     teams-for-linux

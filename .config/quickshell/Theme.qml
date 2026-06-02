@@ -26,7 +26,7 @@ Rectangle {
   }
   Process {
     id: gba
-    command: ["sh", "-c", "cd ~/gba && mgba-qt red.gba -p Odyssey.ups"]
+    command: ["sh", "-c", "cd ~/gba && SkyEmu odyssey.gba"]
   }
 
   RowLayout {

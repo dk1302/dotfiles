@@ -31,10 +31,4 @@
       package = pkgs.nerd-fonts.recursive-mono;
     };
   };
-
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-    style.package = pkgs.adwaita-qt;
-  };
 }
