@@ -41,7 +41,7 @@ Rectangle {
   }
   Process {
     id: exit
-    command: ["sh", "-c", "mmsg dispatch quit"]
+    command: ["sh", "-c", "pkill -u unknownd"]
   }
   Process {
     id: firmware

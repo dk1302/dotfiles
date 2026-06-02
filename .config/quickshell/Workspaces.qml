@@ -20,10 +20,8 @@ Rectangle {
 
         function checkActive() {
           var x = 0
-          if (isActive) {
+          if (isActive || activeTag > 4) {
             x = 30 + (index * 30)
-          } else if (activeTag > 4) {
-            x = 20 + (index * 40)
           } else if ((index + 1) < activeTag) {
             x = 20 + (index * 30)
           } else if ((index + 1) > activeTag) {

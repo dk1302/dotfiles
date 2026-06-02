@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
-  x: checkTime() ? leftIslandX + 195 : leftIslandX + 180
+  x: checkTime() ? leftIslandX + 195 : leftIslandX + 185
   y: panelY
 
   function getAppName(index) {
@@ -13,6 +13,8 @@ Rectangle {
       return ""
     } else if (index === 2) {
       return ""
+    } else if (index === 3) {
+      return ""
     } else {
       return ""
     } 
@@ -31,6 +33,10 @@ Rectangle {
     command: ["sh", "-c", "ytmdesktop"]
   }
   Process {
+    id: btop
+    command: ["sh", "-c", "mmsg dispatch toggle_named_scratchpad,none,btop,ghostty --title=btop +new-window"]
+  }
+  Process {
     id: launcher
     command: ["sh", "-c", "rofi -show drun -theme ~/.config/rofi/apps.rasi"]
   }
@@ -39,7 +45,7 @@ Rectangle {
     spacing: 0
 
     Repeater {
-      model: 4 
+      model: 5
 
       Rectangle {
         color: "transparent"
@@ -120,13 +126,15 @@ Rectangle {
                 steam.startDetached()
               } else if (index === 2) {
                 music.startDetached()
+              } else if (index === 3) {
+                btop.startDetached()
               } else {
                 clickTimer.restart()
                 launcher.startDetached()
               }
             }
             onReleased: {
-              if(index < 3) {
+              if(index < 4) {
                 app.clicked = false
               }
             }

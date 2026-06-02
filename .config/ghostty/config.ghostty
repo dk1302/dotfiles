@@ -27,7 +27,7 @@ keybind = alt+q=close_surface
 keybind = alt+o=new_split:left
 keybind = alt+;=goto_split:previous
 keybind = alt+'=goto_split:next
-keybind = alt+n=resize_split:left,490
-keybind = alt+m=resize_split:right,490
+keybind = alt+n=resize_split:left,400
+keybind = alt+m=resize_split:right,400
 
 confirm-close-surface = false

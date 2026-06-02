@@ -26,9 +26,9 @@
   environment.systemPackages = with pkgs; [
     awww
     blender
-    btop
+    btop-cuda
     claude-code
-    fastfetch
+    droidcam
     fzf
     gamemode
     gammastep
@@ -38,8 +38,8 @@
     hypridle
     hyprpicker
     imagemagick
+    jq
     lazygit
-    macchina
     mako
     mgba
     nemo
@@ -50,13 +50,14 @@
     rofi
     starship
     stow
+    teams-for-linux
     typst
     unzip
     uwsm
     video-trimmer
     waypaper
+    wev
     wl-clipboard
-    xhost
     yazi
     ytmdesktop
     zoxide
