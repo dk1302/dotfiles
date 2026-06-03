@@ -62,3 +62,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start()
 	end,
 })
+
+require("plugins/lsp")
+require("plugins/autosession")
+require("plugins/minuet")
+require("plugins/misc")
+require("plugins/telescope")
+require("plugins/lualine")

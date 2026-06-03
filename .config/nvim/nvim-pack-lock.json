@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "vim-razor": {
+      "rev": "305dd1db88c657c0c02effbee1a88048479bb0c4",
+      "src": "https://github.com/jlcrochet/vim-razor.git"
+    }
+  }
+}
