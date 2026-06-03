@@ -46,17 +46,17 @@
       typst-preview-nvim
     ];
 
-    # initLua = ''
-    #   -- Main config
-    #   ${builtins.readFile ./nvim/init.lua}
-    #
-    #   -- Additional config files
-    #   ${builtins.readFile ./nvim/plugins/lsp.lua}
-    #   ${builtins.readFile ./nvim/plugins/misc.lua}
-    #   ${builtins.readFile ./nvim/plugins/telescope.lua}
-    #   ${builtins.readFile ./nvim/plugins/lualine.lua}
-    #   ${builtins.readFile ./nvim/plugins/autosession.lua}
-    #   ${builtins.readFile ./nvim/plugins/minuet.lua}
-    # '';
+    initLua = ''
+      -- Main config
+      ${builtins.readFile ./nvim/init.lua}
+
+      -- Additional config files
+      ${builtins.readFile ./nvim/plugins/lsp.lua}
+      ${builtins.readFile ./nvim/plugins/misc.lua}
+      ${builtins.readFile ./nvim/plugins/telescope.lua}
+      ${builtins.readFile ./nvim/plugins/lualine.lua}
+      ${builtins.readFile ./nvim/plugins/autosession.lua}
+      ${builtins.readFile ./nvim/plugins/minuet.lua}
+    '';
   };
 }
