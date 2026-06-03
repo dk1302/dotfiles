@@ -10,8 +10,6 @@
   hardware = {
     graphics.enable = true;
 
-    nvidia-container-toolkit.enable = true;
-
     nvidia = {
       modesetting.enable = true;
 

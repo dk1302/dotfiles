@@ -31,4 +31,10 @@
       package = pkgs.nerd-fonts.recursive-mono;
     };
   };
+
+  qt = {
+    enable = true;
+    style.name = "gtk2";
+    style.package = pkgs.libsForQt5.qtstyleplugins;
+  };
 }

@@ -22,11 +22,11 @@ Rectangle {
   }
   Process {
     id: theme
-    command: ["sh", "-c", "hyprpicker | wl-copy"]
+    command: ["sh", "-c", "grim -g \"$(slurp)\" grim.png"]
   }
   Process {
     id: gba
-    command: ["sh", "-c", "cd ~/gba && SkyEmu odyssey.gba"]
+    command: ["sh", "-c", "cd ~/gba && mgba-qt odyssey.gba"]
   }
 
   RowLayout {

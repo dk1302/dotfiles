@@ -39,7 +39,6 @@
       # Appearance
       gruvbox-material
       lualine-nvim
-      nvim-colorizer-lua
       fidget-nvim
       which-key-nvim
       # Misc

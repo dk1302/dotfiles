@@ -23,43 +23,83 @@
 
   programs.nix-ld.enable = true;
 
+  xdg.portal.enable = true;
+  xdg.portal.wlr.enable = true;
+
   environment.systemPackages = with pkgs; [
-    awww
-    blender
+# terminal
+    ghostty
     btop-cuda
     claude-code
-    droidcam
-    fzf
-    gamemode
-    gammastep
+    yazi
+    lazygit
+    starship
+# misc tools
     git
-    gtk3
-    ghostty
-    hypridle
-    hyprpicker
+    fzf
     imagemagick
     jq
-    lazygit
-    mako
-    nemo
-    osu-lazer-bin
-    quickshell
-    polychromatic
     poppler
-    rofi
-    skyemu
-    starship
-    stow
-    teams-for-linux
-    typst
-    unzip
-    uwsm
-    video-trimmer
-    waypaper
-    wev
-    wl-clipboard
-    yazi
-    ytmdesktop
     zoxide
+    unzip
+    stow
+    wev
+# c/c++ tools
+    clang-tools
+# typst tools
+    typst
+    tinymist
+    typstyle
+# bash tools
+    bash-language-server
+    shfmt
+# nix tools
+    nixd
+    nixfmt
+# lua tools
+    lua-language-server
+    stylua
+# rust tools
+    rustc
+    rust-analyzer
+    cargo
+    rustfmt
+# csharp tools
+    csharp-ls
+    csharpier
+
+## system
+# applications
+    blender
+    droidcam
+    mgba
+    nemo
+    video-trimmer
+    ytmdesktop
+# interface
+    quickshell
+    rofi
+# wallpaper
+    awww
+    waypaper
+# screenshot
+    grim
+    slurp
+# background
+    gammastep
+    gtk3
+    hypridle
+    mako
+    wl-clipboard
+# gaming
+    gamemode
+    osu-lazer-bin
+    polychromatic
   ];
+
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "gtk2";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    RUST_BACKTRACE = 1;
+  };
 }

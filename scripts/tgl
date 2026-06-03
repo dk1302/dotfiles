@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-pgrep quickshell >/dev/null
-if [ $? -eq 0 ]; then
-  pkill quickshell
-else
-  mmsg dispatch spawn,qs
-fi
