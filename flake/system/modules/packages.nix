@@ -11,18 +11,6 @@
     nerd-fonts.terminess-ttf
   ];
 
-  programs.gpu-screen-recorder.enable = true;
-
-  programs.mango.enable = true;
-
-  programs.dconf.enable = true;
-
-  programs.firefox.enable = true;
-
-  programs.steam.enable = true;
-
-  programs.nix-ld.enable = true;
-
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
 
