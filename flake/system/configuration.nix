@@ -11,8 +11,8 @@
     ./modules/settings.nix
     ./modules/services.nix
     ./modules/nvidia.nix
-    ./modules/packages.nix
-    ./modules/programs.nix
+    ./modules/desktop.nix
+    ./modules/terminal.nix
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
