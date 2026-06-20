@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   boot.loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+      };
       efi.canTouchEfiVariables = true;
       timeout = 5;
   };

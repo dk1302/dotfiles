@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 {
   fonts.packages = with pkgs; [
     nerd-fonts.recursive-mono
@@ -15,8 +9,6 @@
   programs.mango.enable = true;
 
   programs.dconf.enable = true;
-
-  programs.firefox.enable = true;
 
   programs.steam.enable = true;
 
@@ -30,9 +22,9 @@
     blender
     droidcam
     mgba
-    nemo
     video-trimmer
     ytmdesktop
+    brave
 # interface
     quickshell
     rofi

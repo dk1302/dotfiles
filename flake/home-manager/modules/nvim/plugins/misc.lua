@@ -10,7 +10,6 @@ require("oil").setup({
 		["l"] = "actions.select",
 		["h"] = "actions.parent",
 		["<m-y>"] = "actions.yank_entry",
-		["<space>"] = "actions.open_terminal",
 	},
 })
 vim.keymap.set("n", "<Esc>h", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -25,6 +24,7 @@ require("conform").setup({
 		bash = { "shfmt" },
 		typst = { "typstyle" },
     c = { "clang-format" },
+    python = { "black" },
 	},
 })
 

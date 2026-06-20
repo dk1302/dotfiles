@@ -26,7 +26,7 @@ Rectangle {
   }
   Process {
     id: firefox
-    command: ["sh", "-c", "firefox"]
+    command: ["sh", "-c", "brave"]
   }
   Process {
     id: music
@@ -34,7 +34,7 @@ Rectangle {
   }
   Process {
     id: btop
-    command: ["sh", "-c", "mmsg dispatch toggle_named_scratchpad,none,btop,ghostty --title=btop +new-window"]
+    command: ["sh", "-c", "mmsg dispatch 'toggle_named_scratchpad,com.mitchellh.ghostty,btop,ghostty --title=btop +new-window -e btop'"]
   }
   Process {
     id: launcher

@@ -21,7 +21,7 @@ Singleton {
 
     // Timer to poll MangoWC state - faster polling for better responsiveness
     Timer {
-        interval: 100  // Poll every 100ms for quick updates
+        interval: 50  // Poll every 100ms for quick updates
         running: root.dwlAvailable
         repeat: true
         onTriggered: root.getTagState()
@@ -105,7 +105,7 @@ Singleton {
     // Refresh state after commands
     Timer {
         id: refreshTimer
-        interval: 100
+        interval: 50
         onTriggered: root.getTagState()
     }
 

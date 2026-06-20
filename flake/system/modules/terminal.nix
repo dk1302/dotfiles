@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 {
   fonts.packages = with pkgs; [
     nerd-fonts.terminess-ttf
@@ -28,7 +22,10 @@
     unzip
     stow
     wev
-    udisks
+    ripgrep
+# python tools
+    pyright
+    black
 # c/c++ tools
     clang-tools
 # typst tools

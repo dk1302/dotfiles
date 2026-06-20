@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   services.ollama = {
     enable = true;
@@ -38,8 +38,6 @@
     wantedBy = [ "default.target" ];
     serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
    };
-
-  services.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
   services.pipewire = {
