@@ -35,7 +35,6 @@
       fidget-nvim
       which-key-nvim
       # Misc
-      minuet-ai-nvim
       typst-preview-nvim
       leetcode-nvim
     ];
@@ -50,7 +49,6 @@
       ${builtins.readFile ./nvim/plugins/telescope.lua}
       ${builtins.readFile ./nvim/plugins/lualine.lua}
       ${builtins.readFile ./nvim/plugins/autosession.lua}
-      ${builtins.readFile ./nvim/plugins/minuet.lua}
     '';
   };
 }
