@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  # services.ollama = {
-  #   enable = true;
-  #   package = pkgs.ollama-cuda;
-  # };
-
   services.avahi = {
     enable = true;
     nssmdns4 = true;
