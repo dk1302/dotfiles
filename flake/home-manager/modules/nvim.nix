@@ -44,6 +44,7 @@
       # Misc
       minuet-ai-nvim
       typst-preview-nvim
+      leetcode-nvim
     ];
 
     initLua = ''

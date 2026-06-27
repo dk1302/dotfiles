@@ -1,6 +1,11 @@
 -- Nvim-ts-autotag
 require("nvim-ts-autotag").setup({})
 
+require("leetcode").setup({
+  ---@type lc.lang
+  lang = "python3",
+})
+
 -- Fidget.nvim
 require("fidget").setup({})
 
@@ -19,11 +24,9 @@ vim.keymap.set("n", "<Esc>h", "<CMD>Oil<CR>", { desc = "Open parent directory" }
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		rust = { "rustfmt" },
 		csharp = { "csharpier" },
 		bash = { "shfmt" },
 		typst = { "typstyle" },
-    c = { "clang-format" },
     python = { "black" },
 	},
 })

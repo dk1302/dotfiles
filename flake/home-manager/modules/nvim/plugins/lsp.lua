@@ -1,11 +1,9 @@
 local servers = {
-	rust_analyzer = {},
 	csharp_ls = {},
 	lua_ls = {},
 	nixd = {},
 	bashls = {},
 	tinymist = {},
-  clangd = {},
   pyright = {},
 }
 
