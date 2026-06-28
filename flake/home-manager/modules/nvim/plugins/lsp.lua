@@ -4,6 +4,7 @@ local servers = {
 	nixd = {},
 	bashls = {},
 	tinymist = {},
+  clangd = {},
   pyright = {},
 }
 
