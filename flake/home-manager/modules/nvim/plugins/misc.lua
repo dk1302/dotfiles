@@ -27,7 +27,6 @@ require("conform").setup({
 		csharp = { "csharpier" },
 		bash = { "shfmt" },
 		typst = { "typstyle" },
-    c = { "clang-format" },
     python = { "black" },
 	},
 })

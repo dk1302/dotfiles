@@ -6,7 +6,7 @@
         consoleMode = "max";
       };
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 5;
   };
 
   boot.kernelModules = [ "v4l2loopback" ];

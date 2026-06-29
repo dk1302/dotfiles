@@ -11,9 +11,8 @@
       enable = true;
       shellAliases = {
         nrs = "cd ~/flake && sudo nixos-rebuild switch --flake .#unknownd";
-        boot = "cd ~/flake && sudo nixos-rebuild boot --flake .#unknownd";
-        sdel = "sudo nix-collect-garbage -d";
-        del = "nix-collect-garbage -d";
+        del = "sudo nix-collect-garbage -d";
+        qwen = "ollama run qwen2.5-coder:7b";
       };
       initExtra = ''
         export STARSHIP_CONFIG=~/.config/starship/starship.toml

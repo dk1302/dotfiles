@@ -6,7 +6,6 @@
     plugins = with pkgs.vimPlugins; [
       # Treesitter parsers
       nvim-treesitter-parsers.qmljs
-      nvim-treesitter-parsers.c
       nvim-treesitter-parsers.c_sharp
       nvim-treesitter-parsers.json
       nvim-treesitter-parsers.html

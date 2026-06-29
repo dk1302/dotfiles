@@ -26,8 +26,6 @@
 # python tools
     pyright
     black
-# c/c++ tools
-    clang-tools
 # typst tools
     typst
     tinymist
