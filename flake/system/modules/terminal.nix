@@ -23,6 +23,12 @@
     stow
     wev
     ripgrep
+# c tools
+    clang-tools
+    gcc-arm-embedded
+    stm32cubemx
+    stlink
+    stlink-tool
 # python tools
     pyright
     black

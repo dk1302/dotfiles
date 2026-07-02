@@ -24,9 +24,9 @@ font-size = "12"
 adjust-icon-height = -30%
 
 keybind = alt+o=new_split:left
-keybind = chain=resize_split:left,400
+keybind = chain=resize_split:left,500
 keybind = alt+n=new_split:down
-keybind = chain=resize_split:down,400
+keybind = chain=resize_split:down,300
 
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+l=goto_split:right

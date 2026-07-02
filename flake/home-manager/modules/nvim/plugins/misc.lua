@@ -28,6 +28,7 @@ require("conform").setup({
 		bash = { "shfmt" },
 		typst = { "typstyle" },
     python = { "black" },
+    c = { "clang-format" },
 	},
 })
 

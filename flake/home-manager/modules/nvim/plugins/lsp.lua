@@ -5,6 +5,7 @@ local servers = {
 	bashls = {},
 	tinymist = {},
   pyright = {},
+  clangd = {},
 }
 
 vim.lsp.config("lua_ls", {
