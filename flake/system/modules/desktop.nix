@@ -25,6 +25,7 @@
     video-trimmer
     ytmdesktop
     brave
+    evince
 # interface
     quickshell
     rofi
